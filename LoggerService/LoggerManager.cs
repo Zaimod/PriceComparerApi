@@ -1,17 +1,14 @@
-﻿using NLog;
+﻿using Contracts;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Contracts
+namespace LoggerService
 {
-    class LoggerManager : ILoggerManager
+    public class LoggerManager : ILoggerManager
     {
-        public static ILogger logger = LogManager.GetCurrentClassLogger();
-
-        public LoggerManager()
-        {
-        }
+        private static ILogger logger = LogManager.GetCurrentClassLogger();
 
         public void LogDebug(string message)
         {

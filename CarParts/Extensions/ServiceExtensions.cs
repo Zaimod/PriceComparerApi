@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Contracts;
+using LoggerService;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -18,10 +20,17 @@ namespace CarParts.Extensions
                 .AllowAnyHeader());
             });
 
-        public static void ConfigureIISIntegration(this IServiceCollection services) =>
+        public static void ConfigureIISIntegration(this IServiceCollection services)
+        {
             services.Configure<IISOptions>(options =>
             {
 
             });
- }
+        }
+
+        public static void ConfigureLoggerService(this IServiceCollection services)
+        {
+            services.AddSingleton<ILoggerManager, LoggerManager>();
+        }
+    }
 }

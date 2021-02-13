@@ -1,0 +1,353 @@
+2021-02-13 21:08:50.3177 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-02-13 21:08:50.4110 Debug Found assembly location directory: 'D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-02-13 21:08:50.4171 Debug Search for auto loading files in location: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0
+2021-02-13 21:08:50.4171 Debug Start auto loading, location: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0
+2021-02-13 21:08:50.4334 Info Auto loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+2021-02-13 21:08:50.4334 Info Loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+2021-02-13 21:08:50.4587 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.0.1463. Product version: 1.7.0+53f8c72107ad200657b89638c4d236a0c9e351eb. GlobalAssemblyCache: False
+2021-02-13 21:08:50.4638 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-02-13 21:08:50.4638 Info Auto loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll succeeded!
+2021-02-13 21:08:50.4784 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-02-13 21:08:50.4784 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-02-13 21:08:50.4784 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2021-02-13 21:08:50.4925 Debug Auto loading done
+2021-02-13 21:08:50.4925 Info Message Template Auto Format enabled
+2021-02-13 21:08:50.4925 Warn Skipping unknown 'NLog' child node: targest
+2021-02-13 21:08:50.5114 Trace ParseRulesElement
+2021-02-13 21:08:50.5271 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logfile' not found for logging rule: *.
+2021-02-13 21:08:50.5459 Debug Watching path 'D:\WorkSpace\CarPartsAPI\CarParts' filter 'nlog.config' for changes.
+2021-02-13 21:08:50.5459 Debug --- NLog configuration dump ---
+2021-02-13 21:08:50.5615 Debug Targets:
+2021-02-13 21:08:50.5615 Debug Rules:
+2021-02-13 21:08:50.5797 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]
+2021-02-13 21:08:50.5866 Debug --- End of NLog configuration dump ---
+2021-02-13 21:08:50.5866 Trace FindReachableObject<System.Object>:
+2021-02-13 21:08:50.6147 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]'
+2021-02-13 21:08:50.6237 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-02-13 21:08:50.6334 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-02-13 21:08:50.6334 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-02-13 21:08:50.6516 Info Validating config: Targets=0, ConfigItems=1, FilePath=D:\WorkSpace\CarPartsAPI\CarParts/nlog.config
+2021-02-13 21:08:57.0870 Debug Targets not configured for logger: LoggerService.LoggerManager
+2021-02-13 21:11:25.3086 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-02-13 21:11:25.3836 Debug Found assembly location directory: 'D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-02-13 21:11:25.3836 Debug Search for auto loading files in location: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0
+2021-02-13 21:11:25.3987 Debug Start auto loading, location: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0
+2021-02-13 21:11:25.3987 Info Auto loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+2021-02-13 21:11:25.3987 Info Loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+2021-02-13 21:11:25.4295 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.0.1463. Product version: 1.7.0+53f8c72107ad200657b89638c4d236a0c9e351eb. GlobalAssemblyCache: False
+2021-02-13 21:11:25.4351 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-02-13 21:11:25.4351 Info Auto loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll succeeded!
+2021-02-13 21:11:25.4501 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-02-13 21:11:25.4501 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-02-13 21:11:25.4648 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2021-02-13 21:11:25.4648 Debug Auto loading done
+2021-02-13 21:11:25.4648 Info Message Template Auto Format enabled
+2021-02-13 21:11:25.4829 Warn Skipping unknown 'NLog' child node: targest
+2021-02-13 21:11:25.4829 Trace ParseRulesElement
+2021-02-13 21:11:25.5016 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logfile' not found for logging rule: *.
+2021-02-13 21:11:25.5184 Debug Watching path 'D:\WorkSpace\CarPartsAPI\CarParts' filter 'nlog.config' for changes.
+2021-02-13 21:11:25.5245 Debug --- NLog configuration dump ---
+2021-02-13 21:11:25.5245 Debug Targets:
+2021-02-13 21:11:25.5390 Debug Rules:
+2021-02-13 21:11:25.5390 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]
+2021-02-13 21:11:25.5390 Debug --- End of NLog configuration dump ---
+2021-02-13 21:11:25.5637 Trace FindReachableObject<System.Object>:
+2021-02-13 21:11:25.5762 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]'
+2021-02-13 21:11:25.5762 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-02-13 21:11:25.5943 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-02-13 21:11:25.5943 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-02-13 21:11:25.6120 Info Validating config: Targets=0, ConfigItems=1, FilePath=D:\WorkSpace\CarPartsAPI\CarParts/nlog.config
+2021-02-13 21:11:35.0790 Debug Targets not configured for logger: LoggerService.LoggerManager
+2021-02-13 21:12:39.5846 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-02-13 21:12:39.6856 Debug Found assembly location directory: 'D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-02-13 21:12:39.6979 Debug Search for auto loading files in location: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0
+2021-02-13 21:12:39.6979 Debug Start auto loading, location: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0
+2021-02-13 21:12:39.7183 Info Auto loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+2021-02-13 21:12:39.7183 Info Loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+2021-02-13 21:12:39.7631 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.0.1463. Product version: 1.7.0+53f8c72107ad200657b89638c4d236a0c9e351eb. GlobalAssemblyCache: False
+2021-02-13 21:12:39.7631 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-02-13 21:12:39.7797 Info Auto loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll succeeded!
+2021-02-13 21:12:39.7797 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-02-13 21:12:39.7948 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-02-13 21:12:39.7948 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2021-02-13 21:12:39.8078 Debug Auto loading done
+2021-02-13 21:12:39.8078 Info Message Template Auto Format enabled
+2021-02-13 21:12:39.8276 Warn Skipping unknown 'NLog' child node: targest
+2021-02-13 21:12:39.8358 Trace ParseRulesElement
+2021-02-13 21:12:39.8358 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logfile' not found for logging rule: *.
+2021-02-13 21:12:39.8688 Debug Watching path 'D:\WorkSpace\CarPartsAPI\CarParts' filter 'nlog.config' for changes.
+2021-02-13 21:12:39.8688 Debug --- NLog configuration dump ---
+2021-02-13 21:12:39.8832 Debug Targets:
+2021-02-13 21:12:39.8832 Debug Rules:
+2021-02-13 21:12:39.8997 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]
+2021-02-13 21:12:39.8997 Debug --- End of NLog configuration dump ---
+2021-02-13 21:12:39.9137 Trace FindReachableObject<System.Object>:
+2021-02-13 21:12:39.9137 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]'
+2021-02-13 21:12:39.9330 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-02-13 21:12:39.9330 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-02-13 21:12:39.9330 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-02-13 21:12:39.9550 Info Validating config: Targets=0, ConfigItems=1, FilePath=D:\WorkSpace\CarPartsAPI\CarParts/nlog.config
+2021-02-13 21:12:46.3679 Debug Targets not configured for logger: LoggerService.LoggerManager
+2021-02-13 21:13:11.4379 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-02-13 21:13:11.5242 Debug Found assembly location directory: 'D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-02-13 21:13:11.5242 Debug Search for auto loading files in location: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0
+2021-02-13 21:13:11.5408 Debug Start auto loading, location: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0
+2021-02-13 21:13:11.5408 Info Auto loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+2021-02-13 21:13:11.5553 Info Loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+2021-02-13 21:13:11.5757 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.0.1463. Product version: 1.7.0+53f8c72107ad200657b89638c4d236a0c9e351eb. GlobalAssemblyCache: False
+2021-02-13 21:13:11.5757 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-02-13 21:13:11.5927 Info Auto loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll succeeded!
+2021-02-13 21:13:11.5927 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-02-13 21:13:11.6067 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-02-13 21:13:11.6067 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2021-02-13 21:13:11.6173 Debug Auto loading done
+2021-02-13 21:13:11.6173 Info Message Template Auto Format enabled
+2021-02-13 21:13:11.6369 Warn Skipping unknown 'NLog' child node: targest
+2021-02-13 21:13:11.6369 Trace ParseRulesElement
+2021-02-13 21:13:11.6611 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logfile' not found for logging rule: *.
+2021-02-13 21:13:11.6794 Debug Watching path 'D:\WorkSpace\CarPartsAPI\CarParts' filter 'nlog.config' for changes.
+2021-02-13 21:13:11.6880 Debug --- NLog configuration dump ---
+2021-02-13 21:13:11.6880 Debug Targets:
+2021-02-13 21:13:11.7017 Debug Rules:
+2021-02-13 21:13:11.7108 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]
+2021-02-13 21:13:11.7108 Debug --- End of NLog configuration dump ---
+2021-02-13 21:13:11.7280 Trace FindReachableObject<System.Object>:
+2021-02-13 21:13:11.7280 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]'
+2021-02-13 21:13:11.7497 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-02-13 21:13:11.7497 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-02-13 21:13:11.7641 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-02-13 21:13:11.7745 Info Validating config: Targets=0, ConfigItems=1, FilePath=D:\WorkSpace\CarPartsAPI\CarParts/nlog.config
+2021-02-13 21:13:42.3638 Debug Targets not configured for logger: LoggerService.LoggerManager
+2021-02-13 21:14:57.4671 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-02-13 21:14:57.5514 Debug Found assembly location directory: 'D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-02-13 21:14:57.5610 Debug Search for auto loading files in location: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0
+2021-02-13 21:14:57.5706 Debug Start auto loading, location: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0
+2021-02-13 21:14:57.5706 Info Auto loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+2021-02-13 21:14:57.5706 Info Loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+2021-02-13 21:14:57.6017 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.0.1463. Product version: 1.7.0+53f8c72107ad200657b89638c4d236a0c9e351eb. GlobalAssemblyCache: False
+2021-02-13 21:14:57.6074 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-02-13 21:14:57.6074 Info Auto loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll succeeded!
+2021-02-13 21:14:57.6214 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-02-13 21:14:57.6214 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-02-13 21:14:57.6360 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2021-02-13 21:14:57.6360 Debug Auto loading done
+2021-02-13 21:14:57.6516 Info Message Template Auto Format enabled
+2021-02-13 21:14:57.6516 Warn Skipping unknown 'NLog' child node: targest
+2021-02-13 21:14:57.6703 Trace ParseRulesElement
+2021-02-13 21:14:57.6864 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logfile' not found for logging rule: *.
+2021-02-13 21:14:57.7061 Debug Watching path 'D:\WorkSpace\CarPartsAPI\CarParts' filter 'nlog.config' for changes.
+2021-02-13 21:14:57.7156 Debug --- NLog configuration dump ---
+2021-02-13 21:14:57.7156 Debug Targets:
+2021-02-13 21:14:57.7292 Debug Rules:
+2021-02-13 21:14:57.7292 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]
+2021-02-13 21:14:57.7455 Debug --- End of NLog configuration dump ---
+2021-02-13 21:14:57.7585 Trace FindReachableObject<System.Object>:
+2021-02-13 21:14:57.7585 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]'
+2021-02-13 21:14:57.7814 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-02-13 21:14:57.7897 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-02-13 21:14:57.7897 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-02-13 21:14:57.8086 Info Validating config: Targets=0, ConfigItems=1, FilePath=D:\WorkSpace\CarPartsAPI\CarParts/nlog.config
+2021-02-13 21:15:05.5610 Debug Targets not configured for logger: LoggerService.LoggerManager
+2021-02-13 21:17:18.6474 Info Configuration file change detected! Reloading in 1000ms...
+2021-02-13 21:17:19.6741 Info Reloading configuration...
+2021-02-13 21:17:19.6815 Info Configuring from an XML element in D:\WorkSpace\CarPartsAPI\CarParts/nlog.config...
+2021-02-13 21:17:19.6815 Trace ParseNLogElement
+2021-02-13 21:17:19.6815 Trace ParseNLogConfig
+2021-02-13 21:17:19.6954 Info Message Template Auto Format enabled
+2021-02-13 21:17:19.6954 Warn Skipping unknown 'NLog' child node: targest
+2021-02-13 21:17:19.6954 Trace ParseRulesElement
+2021-02-13 21:17:19.6954 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logfile' not found for logging rule: *.
+2021-02-13 21:17:19.7142 Debug Stopping file watching for path 'D:\WorkSpace\CarPartsAPI\CarParts' filter 'nlog.config'
+2021-02-13 21:17:19.7142 Info Closing old configuration.
+2021-02-13 21:17:19.7142 Debug LogFactory Flush with timeout=15 secs
+2021-02-13 21:17:19.7309 Trace Flushing all 0 targets...
+2021-02-13 21:17:19.7309 Trace ForEachItemInParallel() 0 items
+2021-02-13 21:17:19.7428 Debug Flush completed
+2021-02-13 21:17:19.7428 Debug Closing logging configuration...
+2021-02-13 21:17:19.7428 Debug Finished closing logging configuration.
+2021-02-13 21:17:19.7428 Debug Watching path 'D:\WorkSpace\CarPartsAPI\CarParts' filter 'nlog.config' for changes.
+2021-02-13 21:17:19.7612 Debug --- NLog configuration dump ---
+2021-02-13 21:17:19.7612 Debug Targets:
+2021-02-13 21:17:19.7612 Debug Rules:
+2021-02-13 21:17:19.7732 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]
+2021-02-13 21:17:19.7732 Debug --- End of NLog configuration dump ---
+2021-02-13 21:17:19.7732 Trace FindReachableObject<System.Object>:
+2021-02-13 21:17:19.7732 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]'
+2021-02-13 21:17:19.7894 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-02-13 21:17:19.7894 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-02-13 21:17:19.7894 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-02-13 21:17:19.7894 Info Validating config: Targets=0, ConfigItems=1, FilePath=D:\WorkSpace\CarPartsAPI\CarParts/nlog.config
+2021-02-13 21:17:19.8058 Debug Targets not configured for logger: LoggerService.LoggerManager
+2021-02-13 21:17:43.5968 Info Configuration file change detected! Reloading in 1000ms...
+2021-02-13 21:17:44.6229 Info Reloading configuration...
+2021-02-13 21:17:44.6370 Error Exception when parsing D:\WorkSpace\CarPartsAPI\CarParts/nlog.config.  Exception: System.Xml.XmlException: The 'targetes' start tag on line 8 position 4 does not match the end tag of 'targest'. Line 13, position 5.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String[] args)
+   at System.Xml.XmlTextReaderImpl.ThrowTagMismatch(NodeData startTag)
+   at System.Xml.XmlTextReaderImpl.ParseEndElement()
+   at System.Xml.XmlTextReaderImpl.ParseElementContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at NLog.Config.NLogXmlElement.Parse(XmlReader reader, Boolean nestedElement)
+   at NLog.Config.NLogXmlElement.Parse(XmlReader reader, Boolean nestedElement)
+   at NLog.Config.NLogXmlElement..ctor(XmlReader reader, Boolean nestedElement)
+   at NLog.Config.NLogXmlElement..ctor(XmlReader reader)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+2021-02-13 21:17:44.6704 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Exception when parsing D:\WorkSpace\CarPartsAPI\CarParts/nlog.config. 
+ ---> System.Xml.XmlException: The 'targetes' start tag on line 8 position 4 does not match the end tag of 'targest'. Line 13, position 5.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String[] args)
+   at System.Xml.XmlTextReaderImpl.ThrowTagMismatch(NodeData startTag)
+   at System.Xml.XmlTextReaderImpl.ParseEndElement()
+   at System.Xml.XmlTextReaderImpl.ParseElementContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at NLog.Config.NLogXmlElement.Parse(XmlReader reader, Boolean nestedElement)
+   at NLog.Config.NLogXmlElement.Parse(XmlReader reader, Boolean nestedElement)
+   at NLog.Config.NLogXmlElement..ctor(XmlReader reader, Boolean nestedElement)
+   at NLog.Config.NLogXmlElement..ctor(XmlReader reader)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2021-02-13 21:17:44.6704 Warn NLog Config Reload() failed. Invalid XML?
+2021-02-13 21:17:54.8683 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-02-13 21:17:54.9454 Debug Found assembly location directory: 'D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-02-13 21:17:54.9552 Debug Search for auto loading files in location: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0
+2021-02-13 21:17:54.9656 Debug Start auto loading, location: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0
+2021-02-13 21:17:54.9656 Info Auto loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+2021-02-13 21:17:54.9788 Info Loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+2021-02-13 21:17:55.0013 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.0.1463. Product version: 1.7.0+53f8c72107ad200657b89638c4d236a0c9e351eb. GlobalAssemblyCache: False
+2021-02-13 21:17:55.0013 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-02-13 21:17:55.0126 Info Auto loading assembly file: D:\WorkSpace\CarPartsAPI\CarParts\bin\Debug\net5.0\NLog.Extensions.Logging.dll succeeded!
+2021-02-13 21:17:55.0126 Trace Assembly 'Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-02-13 21:17:55.0241 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-02-13 21:17:55.0241 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2021-02-13 21:17:55.0241 Debug Auto loading done
+2021-02-13 21:17:55.0421 Info Message Template Auto Format enabled
+2021-02-13 21:17:55.0629 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-02-13 21:17:55.0714 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-02-13 21:17:55.0714 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-02-13 21:17:55.0882 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-02-13 21:17:55.0882 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-02-13 21:17:55.0882 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-02-13 21:17:55.1035 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-02-13 21:17:55.1035 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-02-13 21:17:55.1035 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-02-13 21:17:55.1216 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-02-13 21:17:55.1216 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-02-13 21:17:55.1340 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-02-13 21:17:55.1340 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-02-13 21:17:55.1340 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-02-13 21:17:55.1488 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-02-13 21:17:55.1488 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-02-13 21:17:55.1488 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-02-13 21:17:55.1701 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:\WorkSpace\CarPartsAPI\CarParts\logs\${shortdate}_logfile.txt'
+2021-02-13 21:17:55.1701 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-02-13 21:17:55.1835 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-02-13 21:17:55.1835 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-02-13 21:17:55.1974 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-02-13 21:17:55.1974 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-02-13 21:17:55.1974 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-02-13 21:17:55.2167 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-02-13 21:17:55.2167 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-02-13 21:17:55.2298 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-02-13 21:17:55.2298 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-02-13 21:17:55.2445 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-02-13 21:17:55.2445 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-02-13 21:17:55.2591 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-02-13 21:17:55.2591 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-02-13 21:17:55.2591 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-02-13 21:17:55.2790 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-02-13 21:17:55.2790 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-02-13 21:17:55.2923 Info Adding target FileTarget(Name=logfile)
+2021-02-13 21:17:55.2923 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-02-13 21:17:55.3066 Trace ParseRulesElement
+2021-02-13 21:17:55.3348 Debug Watching path 'D:\WorkSpace\CarPartsAPI\CarParts' filter 'nlog.config' for changes.
+2021-02-13 21:17:55.3430 Debug --- NLog configuration dump ---
+2021-02-13 21:17:55.3520 Debug Targets:
+2021-02-13 21:17:55.3520 Debug File Target[logfile]
+2021-02-13 21:17:55.3682 Debug Rules:
+2021-02-13 21:17:55.3682 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-02-13 21:17:55.3865 Debug --- End of NLog configuration dump ---
+2021-02-13 21:17:55.3991 Trace FindReachableObject<System.Object>:
+2021-02-13 21:17:55.3991 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-02-13 21:17:55.4170 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-02-13 21:17:55.4170 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-02-13 21:17:55.4331 Trace   Scanning Property FileName ''D:\WorkSpace\CarPartsAPI\CarParts\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-02-13 21:17:55.4331 Trace   Scanning SimpleLayout ''D:\WorkSpace\CarPartsAPI\CarParts\logs\${shortdate}_logfile.txt''
+2021-02-13 21:17:55.4467 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-02-13 21:17:55.4467 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-02-13 21:17:55.4467 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-02-13 21:17:55.4659 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-02-13 21:17:55.4659 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-02-13 21:17:55.4805 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-02-13 21:17:55.4805 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-02-13 21:17:55.4923 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-02-13 21:17:55.4923 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-02-13 21:17:55.4923 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-02-13 21:17:55.5082 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-02-13 21:17:55.5082 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-02-13 21:17:55.5082 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-02-13 21:17:55.5082 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-02-13 21:17:55.5267 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-02-13 21:17:55.5267 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-02-13 21:17:55.5267 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-02-13 21:17:55.5409 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-02-13 21:17:55.5409 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-02-13 21:17:55.5409 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\WorkSpace\CarPartsAPI\CarParts/nlog.config
+2021-02-13 21:17:55.5602 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-02-13 21:17:55.5703 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-02-13 21:17:55.5703 Trace Initializing Layout Renderer: ${message}
+2021-02-13 21:17:55.5703 Trace Initializing Layout Renderer: ${literal}
+2021-02-13 21:17:55.5875 Trace Initializing Layout Renderer: ${level}
+2021-02-13 21:17:55.5875 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-02-13 21:17:55.6015 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-02-13 21:17:55.6015 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-02-13 21:17:55.6015 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-02-13 21:17:55.6174 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-02-13 21:17:55.6174 Trace Initializing Layout Renderer: ${uppercase}
+2021-02-13 21:17:55.6346 Trace Initializing Layout Renderer: ${literal}
+2021-02-13 21:17:55.6346 Trace Initializing Layout Renderer: ${longdate}
+2021-02-13 21:17:55.6346 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-02-13 21:17:55.6514 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-02-13 21:17:55.6514 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-02-13 21:17:55.6514 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-02-13 21:17:55.6671 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-02-13 21:17:55.6671 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-02-13 21:17:55.6671 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-02-13 21:17:55.6825 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-02-13 21:17:55.6825 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-02-13 21:17:55.6825 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-02-13 21:17:55.6985 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-02-13 21:17:55.6985 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-02-13 21:17:55.6985 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-02-13 21:17:55.7133 Trace Initializing Layout Renderer: ${literal}
+2021-02-13 21:17:55.7133 Trace Initializing Layout Renderer: ${shortdate}
+2021-02-13 21:17:55.7133 Trace Initializing Layout Renderer: ${literal}
+2021-02-13 21:17:55.7285 Trace Initializing 'D:\WorkSpace\CarPartsAPI\CarParts\logs\${shortdate}_logfile.txt'
+2021-02-13 21:17:55.7285 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-02-13 21:17:55.7285 Trace Scanning SimpleLayout ''D:\WorkSpace\CarPartsAPI\CarParts\logs\${shortdate}_logfile.txt''
+2021-02-13 21:17:55.7465 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-02-13 21:17:55.7465 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-02-13 21:17:55.7583 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-02-13 21:17:55.7583 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-02-13 21:17:55.7583 Trace Initializing File Target[logfile]
+2021-02-13 21:17:55.7770 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-02-13 21:17:55.7770 Trace Scanning FileTarget 'File Target[logfile]'
+2021-02-13 21:17:55.7770 Trace  Scanning Property FileName ''D:\WorkSpace\CarPartsAPI\CarParts\logs\${shortdate}_logfile.txt'' NLog.Layouts
+2021-02-13 21:17:55.7934 Trace  Scanning SimpleLayout ''D:\WorkSpace\CarPartsAPI\CarParts\logs\${shortdate}_logfile.txt''
+2021-02-13 21:17:55.7934 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-02-13 21:17:55.8071 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-02-13 21:17:55.8071 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-02-13 21:17:55.8211 Trace File Target[logfile] has 2 layouts
+2021-02-13 21:17:55.8211 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-02-13 21:18:06.2829 Debug Targets for LoggerService.LoggerManager by level:
+2021-02-13 21:18:06.2829 Debug Trace =>
+2021-02-13 21:18:06.2934 Debug Debug => logfile
+2021-02-13 21:18:06.2934 Debug Info => logfile
+2021-02-13 21:18:06.2934 Debug Warn => logfile
+2021-02-13 21:18:06.3083 Debug Error => logfile
+2021-02-13 21:18:06.3083 Debug Fatal => logfile
+2021-02-13 21:18:06.3406 Debug FileTarget(Name=logfile): Preparing for new file 'D:\WorkSpace\CarPartsAPI\CarParts\logs\2021-02-13_logfile.txt'
+2021-02-13 21:18:06.3521 Debug Creating file appender: D:\WorkSpace\CarPartsAPI\CarParts\logs\2021-02-13_logfile.txt
+2021-02-13 21:18:06.3521 Trace Opening D:\WorkSpace\CarPartsAPI\CarParts\logs\2021-02-13_logfile.txt with allowFileSharedWriting=False
+2021-02-13 21:18:06.3725 Trace Opening D:\WorkSpace\CarPartsAPI\CarParts\logs\2021-02-13_logfile.txt with allowFileSharedWriting=False
+2021-02-13 21:18:06.3904 Trace Opening D:\WorkSpace\CarPartsAPI\CarParts\logs\2021-02-13_logfile.txt with allowFileSharedWriting=False
+2021-02-13 21:18:06.4003 Trace Opening D:\WorkSpace\CarPartsAPI\CarParts\logs\2021-02-13_logfile.txt with allowFileSharedWriting=False

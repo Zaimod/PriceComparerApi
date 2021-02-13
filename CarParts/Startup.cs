@@ -1,4 +1,6 @@
 using CarParts.Extensions;
+using Contracts;
+using LoggerService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -9,10 +11,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using NLog;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace CarParts
 {
@@ -20,6 +25,7 @@ namespace CarParts
     {
         public Startup(IConfiguration configuration)
         {
+            LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
             Configuration = configuration;
         }
 
@@ -30,6 +36,7 @@ namespace CarParts
         {
             services.ConfigureCors();
             services.ConfigureIISIntegration();
+            services.ConfigureLoggerService();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -37,7 +44,7 @@ namespace CarParts
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CarParts", Version = "v1" });
             });
         }
-
+        
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
