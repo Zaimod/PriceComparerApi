@@ -9,11 +9,11 @@ namespace CarParts.Controllers
 {
     [ApiController]
     [Route("testNlog")]   
-    public class TestController : ControllerBase
+    public class TestNlogController : ControllerBase
     {
         private ILoggerManager _logger;
 
-        public TestController(ILoggerManager logger)
+        public TestNlogController(ILoggerManager logger)
         {
             _logger = logger;
         }

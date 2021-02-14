@@ -37,6 +37,9 @@ namespace CarParts
             services.ConfigureCors();
             services.ConfigureIISIntegration();
             services.ConfigureLoggerService();
+            services.ConfigureMySqlContext(Configuration);
+            services.ConfigureRepositoryWrapper();
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -46,7 +49,7 @@ namespace CarParts
         }
         
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerManager logger)
         {
             if (env.IsDevelopment())
             {
@@ -59,6 +62,7 @@ namespace CarParts
                 app.UseHsts();
             }
 
+            app.ConfigureExceptionHandler(logger);
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
