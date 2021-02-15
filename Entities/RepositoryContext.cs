@@ -15,5 +15,14 @@ namespace Entities
 
         public DbSet<Cars> Cars { get; set; }
         public DbSet<Suppliers> Suppliers { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<Cars>()
+                .HasMany(c => c.Suppliers)
+                .WithMany(s => s.Cars)
+                .UsingEntity(j => j.ToTable("CarsSuppliers"));
+        }
     }
 }

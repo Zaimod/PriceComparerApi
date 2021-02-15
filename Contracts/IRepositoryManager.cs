@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Contracts
 {
-    public interface IRepositoryWrapper
+    public interface IRepositoryManager
     {
         ICarsRepository Cars { get; }
         ISuppliersRepository Suppliers { get; }

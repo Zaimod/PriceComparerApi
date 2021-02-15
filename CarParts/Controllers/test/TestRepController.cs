@@ -11,9 +11,9 @@ namespace CarParts.Controllers.test
     [Route("testRep")]
     public class testRepController : ControllerBase
     {
-        private readonly IRepositoryWrapper _repository;
+        private readonly IRepositoryManager _repository;
 
-        public testRepController(IRepositoryWrapper repository)
+        public testRepController(IRepositoryManager repository)
         {
             _repository = repository;
         }

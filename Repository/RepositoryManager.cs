@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class RepositoryWrapper : IRepositoryWrapper
+    public class RepositoryManager : IRepositoryManager
     {
         private RepositoryContext _repoContext;
         private ICarsRepository _cars;
@@ -40,7 +40,7 @@ namespace Repository
             }
         }
 
-        public RepositoryWrapper(RepositoryContext repositoryContext)
+        public RepositoryManager(RepositoryContext repositoryContext)
         {
             _repoContext = repositoryContext;
         }

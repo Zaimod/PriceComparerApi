@@ -9,5 +9,8 @@ namespace Contracts
 {
     public interface ISuppliersRepository: IRepositoryBase<Suppliers>
     {
+        IEnumerable<Suppliers> GetAllSuppliers();
+
+        Suppliers GetSupplierById(Guid supplierId);
     }
 }

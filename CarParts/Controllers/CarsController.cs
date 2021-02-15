@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Contracts;
 using Entities.DataTransferObjects;
+using Entities.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -15,10 +16,10 @@ namespace CarParts.Controllers
     public class CarsController : ControllerBase
     {
         private ILoggerManager _logger;
-        private IRepositoryWrapper _repository;
+        private IRepositoryManager _repository;
         private IMapper _mapper;
 
-        public CarsController(ILoggerManager logger, IRepositoryWrapper repository, IMapper mapper)
+        public CarsController(ILoggerManager logger, IRepositoryManager repository, IMapper mapper)
         {
             _logger = logger;
             _repository = repository;
@@ -37,7 +38,7 @@ namespace CarParts.Controllers
             return Ok(carsResult);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "CarById")]
         public IActionResult GetCarById(Guid id)
         {
             var car = _repository.Cars.GetCarById(id);
@@ -51,6 +52,33 @@ namespace CarParts.Controllers
                 var carDto = _mapper.Map<CarsDto>(car);
                 return Ok(carDto);
             }
+        }
+
+        [HttpPost]
+        public IActionResult CreateCar([FromBody]CarForCreationDto car)
+        {
+            if(car == null)
+            {
+                _logger.LogError("CarForCreationDto object sent from client is null.");
+
+                return BadRequest("CarForCrationDto object is null");
+            }
+
+            if(!ModelState.IsValid)
+            {
+                _logger.LogError("Invalid car object sent from client.");
+
+                return BadRequest("Invalid model object");
+            }
+
+            var carEntity = _mapper.Map<Cars>(car);
+
+            _repository.Cars.CreateCar(carEntity);
+            _repository.Save();
+
+            var createdCar = _mapper.Map<CarsDto>(carEntity);
+
+            return CreatedAtRoute("CarById", new { id = createdCar.Id }, createdCar);
         }
     }
 }

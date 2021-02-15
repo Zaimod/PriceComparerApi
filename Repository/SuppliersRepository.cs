@@ -16,5 +16,18 @@ namespace Repository
         {
 
         }
+
+        public IEnumerable<Suppliers> GetAllSuppliers()
+        {
+            return FindAll()
+                .OrderBy(c => c.Name)
+                .ToList();
+        }
+
+        public Suppliers GetSupplierById(Guid supplierId)
+        {
+            return FindByCondition(supplier => supplier.Id.Equals(supplierId))
+                .FirstOrDefault();
+        }     
     }
 }

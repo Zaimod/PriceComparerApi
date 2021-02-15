@@ -29,5 +29,10 @@ namespace Repository
             return FindByCondition(car => car.Id.Equals(carId))
                 .FirstOrDefault();
         }
+
+        public void CreateCar(Cars car)
+        {
+            Create(car);
+        }
     }
 }

@@ -41,6 +41,12 @@ namespace CarParts
             services.ConfigureRepositoryWrapper();
             services.AddAutoMapper(typeof(Startup));
 
+            services.AddControllers(config =>
+            {
+                config.RespectBrowserAcceptHeader = true;
+                config.ReturnHttpNotAcceptable = true;
+            }).AddXmlDataContractSerializerFormatters();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

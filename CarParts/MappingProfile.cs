@@ -13,6 +13,8 @@ namespace CarParts
         public MappingProfile()
         {
             CreateMap<Cars, CarsDto>();
+            CreateMap<Suppliers, SuppliersDto>();
+            CreateMap<CarForCreationDto, Cars>();
         }
     }
 }
