@@ -10,6 +10,8 @@ namespace Contracts
     {
         ICarsRepository Cars { get; }
         ISuppliersRepository Suppliers { get; }
+        IPartsRepository Parts { get; }
+        ICategoryRepository Category { get; }
         void Save();
     }
 }

@@ -13,6 +13,8 @@ namespace Repository
         private RepositoryContext _repoContext;
         private ICarsRepository _cars;
         private ISuppliersRepository _suppliers;
+        private IPartsRepository _parts;
+        private ICategoryRepository _category;
 
         public ICarsRepository Cars
         {
@@ -37,6 +39,32 @@ namespace Repository
                 }
 
                 return _suppliers;
+            }
+        }
+
+        public IPartsRepository Parts
+        {
+            get
+            {
+                if(_parts == null)
+                {
+                    _parts = new PartsRepository(_repoContext);
+                }
+
+                return _parts;
+            }
+        }
+
+        public ICategoryRepository Category
+        {
+            get
+            {
+                if(_category == null)
+                {
+                    _category = new CategoryRepository(_repoContext);
+                }
+
+                return _category;
             }
         }
 

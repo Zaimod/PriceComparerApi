@@ -14,7 +14,6 @@ namespace Repository
         public SuppliersRepository(RepositoryContext repositoryContext)
             : base(repositoryContext)
         {
-
         }
 
         public IEnumerable<Suppliers> GetAllSuppliers()
@@ -28,6 +27,11 @@ namespace Repository
         {
             return FindByCondition(supplier => supplier.Id.Equals(supplierId))
                 .FirstOrDefault();
-        }     
+        }
+
+        public void CreateSupplier(Suppliers supplier)
+        {
+            Create(supplier);
+        }
     }
 }

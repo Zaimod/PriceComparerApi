@@ -14,7 +14,13 @@ namespace CarParts
         {
             CreateMap<Cars, CarsDto>();
             CreateMap<Suppliers, SuppliersDto>();
+            CreateMap<Parts, PartsDto>();
+            CreateMap<Category, CategoryDto>();
+
             CreateMap<CarForCreationDto, Cars>();
+            CreateMap<SupplierForCreationDto, Suppliers>();
+            CreateMap<PartsForCreationDto, Parts>();
+            CreateMap<CategoryForCreationDto, Category>();
         }
     }
 }

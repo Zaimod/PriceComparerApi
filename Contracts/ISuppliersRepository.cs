@@ -12,5 +12,7 @@ namespace Contracts
         IEnumerable<Suppliers> GetAllSuppliers();
 
         Suppliers GetSupplierById(Guid supplierId);
+
+        void CreateSupplier(Suppliers supplier);
     }
 }

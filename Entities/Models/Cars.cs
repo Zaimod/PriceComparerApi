@@ -21,6 +21,6 @@ namespace Entities.Models
         public string Model { get; set; }
 
         public List<Suppliers> Suppliers { get; set; } = new List<Suppliers>();
-
+        public List<Parts> Parts { get; set; } = new List<Parts>();
     }
 }

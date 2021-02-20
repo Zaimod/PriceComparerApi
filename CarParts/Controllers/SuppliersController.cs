@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Contracts;
 using Entities.DataTransferObjects;
+using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,33 @@ namespace CarParts.Controllers
                 var supplierDto = _mapper.Map<SuppliersDto>(supplier);
                 return Ok(supplierDto);
             }
+        }
+
+        [HttpPost]
+        public IActionResult CreateSupplier([FromBody] SupplierForCreationDto supplier)
+        {
+            if (supplier == null)
+            {
+                _logger.LogError("SupplierForCreationDto object sent from client is null.");
+
+                return BadRequest("SupplierForCreationDto object is null");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                _logger.LogError("Invalid car object sent from client.");
+
+                return BadRequest("Invalid model object");
+            }
+
+            var supplierEntity = _mapper.Map<Suppliers>(supplier);
+
+            _repository.Suppliers.CreateSupplier(supplierEntity);
+            _repository.Save();
+
+            var createdSupplier = _mapper.Map<SuppliersDto>(supplierEntity);
+
+            return CreatedAtRoute("SupplierById", new { id = createdSupplier.Id }, createdSupplier);
         }
     }
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entities.DataTransferObjects
 {
-    public class SuppliersDto
+    public class CategoryDto
     {
         public Guid Id { get; set; }
+
         public string Name { get; set; }
-        public string Country { get; set; }
     }
 }

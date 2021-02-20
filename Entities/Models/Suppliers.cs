@@ -16,6 +16,11 @@ namespace Entities.Models
         [StringLength(60, ErrorMessage = "Name of Supplier can't be longer than 60 characters")]
         public string Name { get; set; }
 
+        [Required(ErrorMessage = "Country of Supplier type is required")]
+        [StringLength(60, ErrorMessage = "Country of Supplier can't be longer than 60 characters")]
+        public string Country { get; set; }
+
         public List<Cars> Cars { get; set; } = new List<Cars>();
+        public List<Parts> Parts { get; set; } = new List<Parts>();
     }
 }
