@@ -55,7 +55,7 @@ namespace CarParts.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateCategory([FromBody] CategoryForCreationDto category)
+        public async Task<IActionResult> CreateCategory([FromBody] CategoryForCreationDto category)
         {
             if (category == null)
             {
@@ -74,7 +74,7 @@ namespace CarParts.Controllers
             var categoryEntity = _mapper.Map<Category>(category);
 
             _repository.Category.CreateCategory(categoryEntity);
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var createdCategory = _mapper.Map<CategoryDto>(categoryEntity);
 

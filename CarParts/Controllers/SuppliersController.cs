@@ -54,7 +54,7 @@ namespace CarParts.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateSupplier([FromBody] SupplierForCreationDto supplier)
+        public async Task<IActionResult> CreateSupplier([FromBody] SupplierForCreationDto supplier)
         {
             if (supplier == null)
             {
@@ -73,7 +73,7 @@ namespace CarParts.Controllers
             var supplierEntity = _mapper.Map<Suppliers>(supplier);
 
             _repository.Suppliers.CreateSupplier(supplierEntity);
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var createdSupplier = _mapper.Map<SuppliersDto>(supplierEntity);
 

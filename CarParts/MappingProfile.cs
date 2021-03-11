@@ -21,6 +21,7 @@ namespace CarParts
             CreateMap<SupplierForCreationDto, Suppliers>();
             CreateMap<PartsForCreationDto, Parts>();
             CreateMap<CategoryForCreationDto, Category>();
+            CreateMap<UserForRegistrationDto, User>();
         }
     }
 }

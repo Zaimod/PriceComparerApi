@@ -55,8 +55,30 @@ namespace CarParts.Controllers
             }
         }
 
+        [HttpGet("collection/({ids})", Name = "CarPartsCollection")]
+        public IActionResult GetPartsCollection([ModelBinder(BinderType = typeof(ArrayModelBinder))] IEnumerable<Guid> ids)
+        {
+            if (ids == null)
+            {
+                _logger.LogError("Parameter ids is null");
+                return BadRequest("Parametr ids is null");
+            }
+
+            var carPartsEntities = _repository.Parts.GetByIds(ids);
+
+            if (ids.Count() != carPartsEntities.Count())
+            {
+                _logger.LogError("Some ids are not valid in a collection");
+                return NotFound();
+            }
+
+            var carPartsToReturn = _mapper.Map<IEnumerable<PartsDto>>(carPartsEntities);
+
+            return Ok(carPartsToReturn);
+        }
+
         [HttpPost]
-        public IActionResult CreateCarParts([FromBody] PartsForCreationDto parts)
+        public async Task<IActionResult> CreateCarParts([FromBody] PartsForCreationDto parts)
         {
             if (parts == null)
             {
@@ -75,39 +97,17 @@ namespace CarParts.Controllers
             var carPartsEntity = _mapper.Map<Parts>(parts);
 
             _repository.Parts.CreateParts(carPartsEntity);
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var carPartsToReturn = _mapper.Map<PartsDto>(carPartsEntity);
 
             return CreatedAtRoute("CarPartsById", new { id = carPartsToReturn.Id }, carPartsToReturn);
         }
 
-        [HttpGet("collection/({ids})", Name = "CarPartsCollection")]
-        public IActionResult GetPartsCollection([ModelBinder(BinderType = typeof(ArrayModelBinder))]IEnumerable<Guid> ids)
-        {
-            if(ids == null)
-            {
-                _logger.LogError("Parameter ids is null");
-                return BadRequest("Parametr ids is null");
-            }
-
-            var carPartsEntities = _repository.Parts.GetByIds(ids);
-
-            if(ids.Count() != carPartsEntities.Count())
-            {
-                _logger.LogError("Some ids are not valid in a collection");
-                return NotFound();
-            }
-
-            var carPartsToReturn = _mapper.Map<IEnumerable<PartsDto>>(carPartsEntities);
-
-            return Ok(carPartsToReturn);
-        }
-
         [HttpPost("collection")]
-        public IActionResult CreatePartsCollection([FromBody] IEnumerable<PartsForCreationDto> partsCollection)
+        public async Task<IActionResult> CreatePartsCollection([FromBody] IEnumerable<PartsForCreationDto> partsCollection)
         {
-            if(partsCollection == null)
+            if (partsCollection == null)
             {
                 _logger.LogError("Parts collection sent from client is null");
                 return BadRequest("Parts collection is null");
@@ -119,7 +119,7 @@ namespace CarParts.Controllers
                 _repository.Parts.CreateParts(parts);
             }
 
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var partsCollectionToReturn = _mapper.Map<IEnumerable<PartsDto>>(partsEntities);
             var ids = string.Join(",", partsCollectionToReturn.Select(c => c.Id));

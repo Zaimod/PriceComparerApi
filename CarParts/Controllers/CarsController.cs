@@ -2,6 +2,7 @@
 using Contracts;
 using Entities.DataTransferObjects;
 using Entities.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -26,10 +27,10 @@ namespace CarParts.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
-        public IActionResult GetAllOwners()
+        [HttpGet(Name = "GetAllOwners"), Authorize]
+        public async Task<IActionResult> GetAllOwners()
         {
-            var cars = _repository.Cars.GetAllCars();
+            var cars = await _repository.Cars.GetAllCarsAsync();
 
             _logger.LogInfo($"Returned all cars from database.");
 
@@ -39,9 +40,9 @@ namespace CarParts.Controllers
         }
 
         [HttpGet("{id}", Name = "CarById")]
-        public IActionResult GetCarById(Guid id)
+        public async Task<IActionResult> GetCarById(Guid id)
         {
-            var car = _repository.Cars.GetCarById(id);
+            var car = await _repository.Cars.GetCarByIdAsync(id);
             if (car == null)
             {
                 _logger.LogInfo($"Company with id: {id} doesn't exist in the database.");
@@ -55,7 +56,7 @@ namespace CarParts.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateCar([FromBody]CarForCreationDto car)
+        public async Task<IActionResult> CreateCar([FromBody]CarForCreationDto car)
         {
             if(car == null)
             {
@@ -74,7 +75,7 @@ namespace CarParts.Controllers
             var carEntity = _mapper.Map<Cars>(car);
 
             _repository.Cars.CreateCar(carEntity);
-            _repository.Save();
+            await _repository.SaveAsync();
 
             var createdCar = _mapper.Map<CarsDto>(carEntity);
 

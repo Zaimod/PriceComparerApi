@@ -1,6 +1,7 @@
 ﻿using Contracts;
 using Entities;
 using Entities.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,18 +18,12 @@ namespace Repository
 
         }
 
-        public IEnumerable<Cars> GetAllCars()
-        {
-            return FindAll()
+        public async Task<IEnumerable<Cars>> GetAllCarsAsync() => await FindAll()
                 .OrderBy(c => c.Brand)
-                .ToList();
-        }
+                .ToListAsync();
 
-        public Cars GetCarById(Guid carId)
-        {
-            return FindByCondition(car => car.Id.Equals(carId))
-                .FirstOrDefault();
-        }
+        public async Task<Cars> GetCarByIdAsync(Guid carId) => await FindByCondition(car => car.Id.Equals(carId))
+                .SingleOrDefaultAsync();
 
         public void CreateCar(Cars car)
         {

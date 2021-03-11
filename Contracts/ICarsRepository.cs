@@ -9,8 +9,8 @@ namespace Contracts
 {
     public interface ICarsRepository : IRepositoryBase<Cars>
     {
-        IEnumerable<Cars> GetAllCars();
-        Cars GetCarById(Guid carId);
+        Task<IEnumerable<Cars>> GetAllCarsAsync();
+        Task<Cars> GetCarByIdAsync(Guid carId);
         void CreateCar(Cars car);
     }
 }

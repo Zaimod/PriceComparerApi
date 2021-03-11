@@ -1,3 +1,4 @@
+using CarParts.ActionFilters;
 using CarParts.Extensions;
 using Contracts;
 using LoggerService;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using NLog;
+using Repository;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -51,7 +53,38 @@ namespace CarParts
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CarParts", Version = "v1" });
-            });
+
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Place to add JWT with Bearer",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    { 
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            },
+                            Name = "Bearer",
+                        },
+                        new List<string>()
+                    }
+                });
+            });          
+
+            services.AddAuthentication();
+            services.ConfigureIdentity();
+            services.AddScoped<ValidationFilterAttribute>();
+            services.ConfigureJWT(Configuration);
+            services.AddScoped<IAuthenticationManager, AuthenticateManager>();
         }
         
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -80,12 +113,13 @@ namespace CarParts
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-            });
+            });         
         }
     }
 }

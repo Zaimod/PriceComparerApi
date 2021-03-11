@@ -73,9 +73,6 @@ namespace Repository
             _repoContext = repositoryContext;
         }
 
-        public void Save()
-        {
-            _repoContext.SaveChanges();
-        }
+        public Task SaveAsync() => _repoContext.SaveChangesAsync();
     }
 }
