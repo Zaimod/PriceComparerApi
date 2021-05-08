@@ -1,0 +1,24 @@
+2021-04-04 20:15:08.6340 WARN Authenticate: Authetication failed. Wrong user name or password.
+2021-04-04 20:16:08.8112 WARN Authenticate: Authetication failed. Wrong user name or password.
+2021-04-04 20:16:16.7337 WARN Authenticate: Authetication failed. Wrong user name or password.
+2021-04-04 20:16:20.0464 WARN Authenticate: Authetication failed. Wrong user name or password.
+2021-04-04 20:16:24.3445 WARN Authenticate: Authetication failed. Wrong user name or password.
+2021-04-04 20:16:28.1817 WARN Authenticate: Authetication failed. Wrong user name or password.
+2021-04-04 20:16:29.0080 WARN Authenticate: Authetication failed. Wrong user name or password.
+2021-04-04 20:16:45.5252 WARN Authenticate: Authetication failed. Wrong user name or password.
+2021-04-04 20:16:48.3802 WARN Authenticate: Authetication failed. Wrong user name or password.
+2021-04-04 20:16:55.5679 WARN Authenticate: Authetication failed. Wrong user name or password.
+2021-04-04 20:18:00.4769 INFO Error: DuplicateUserName, Username 'Zaimod' is already taken.
+2021-04-04 20:18:00.4902 INFO Error: DuplicateEmail, Email 'ivashchuk68@gmail.com' is already taken.
+2021-04-04 20:18:12.3461 INFO Error: DuplicateUserName, Username 'Zaimod1' is already taken.
+2021-04-04 20:20:01.9240 INFO Returned all categories from database.
+2021-04-04 20:20:11.9948 INFO Returned all categories from database.
+2021-04-04 20:20:12.5693 INFO Returned all categories from database.
+2021-04-04 20:20:13.3404 INFO Returned all categories from database.
+2021-04-04 20:21:41.3942 INFO Here is info message from our values controller.
+2021-04-04 20:21:41.4553 DEBUG Here is debug message from our values controller.
+2021-04-04 20:21:41.4553 WARN Here is warn message from our values controller.
+2021-04-04 20:21:41.4736 ERROR Here is an error message from our values controller.
+2021-04-04 20:22:23.8211 INFO Returned all categories from database.
+2021-04-04 20:22:56.0919 INFO Returned all categories from database.
+2021-04-04 20:23:05.4818 INFO Returned all categories from database.

@@ -21,8 +21,8 @@ namespace CarParts.Controllers.test
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            _repository.Cars.FindAll();
-            _repository.Suppliers.FindAll();
+            _repository.catalog.FindAll();
+            _repository.store.FindAll();
 
             return new string[] { "value1", "value2" };
         }

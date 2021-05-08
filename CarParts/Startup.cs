@@ -1,6 +1,7 @@
 using CarParts.ActionFilters;
 using CarParts.Extensions;
 using Contracts;
+using EasyData.Services;
 using LoggerService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -52,7 +53,7 @@ namespace CarParts
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CarParts", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "priceComparison", Version = "v1" });
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
@@ -85,6 +86,7 @@ namespace CarParts
             services.AddScoped<ValidationFilterAttribute>();
             services.ConfigureJWT(Configuration);
             services.AddScoped<IAuthenticationManager, AuthenticateManager>();
+            services.AddRazorPages();
         }
         
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -94,7 +96,8 @@ namespace CarParts
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CarParts v1"));
+                app.UseReDoc(c => c.SpecUrl("/swagger/v1/swagger.json"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PriceComparison v1"));
             }
             else
             {
@@ -118,6 +121,10 @@ namespace CarParts
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapEasyData((options => {
+                    options.UseDbContext<Entities.RepositoryContext>();
+                }));
+                endpoints.MapRazorPages();
                 endpoints.MapControllers();
             });         
         }

@@ -29,7 +29,7 @@ namespace CarParts.Controllers
         [HttpGet]
         public IActionResult GetAllCategories()
         {
-            var categories = _repository.Category.GetAllCategories();
+            var categories = _repository.category.GetAllCategories();
 
             _logger.LogInfo($"Returned all categories from database.");
 
@@ -39,9 +39,9 @@ namespace CarParts.Controllers
         }
 
         [HttpGet("{id}", Name = "CategoryById")]
-        public IActionResult GetCategoryById(Guid id)
+        public IActionResult GetCategoryById(int id)
         {
-            var category = _repository.Category.GetCategoryById(id);
+            var category = _repository.category.GetCategoryById(id);
             if (category == null)
             {
                 _logger.LogInfo($"Category with id: {id} doesn't exist in the database.");
@@ -73,7 +73,7 @@ namespace CarParts.Controllers
 
             var categoryEntity = _mapper.Map<Category>(category);
 
-            _repository.Category.CreateCategory(categoryEntity);
+            _repository.category.CreateCategory(categoryEntity);
             await _repository.SaveAsync();
 
             var createdCategory = _mapper.Map<CategoryDto>(categoryEntity);

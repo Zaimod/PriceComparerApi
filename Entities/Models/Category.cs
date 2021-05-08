@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace Entities.Models
 {
-    [Table("category")]
+    [Table("Category")]
     public class Category
     {
-        [Column("CategoryId")]
-        public Guid Id { get; set; }
-
+        public int Id { get; set; }
         public string Name { get; set; }
-
-        public List<Parts> Parts { get; set; } = new List<Parts>();
+        public List<Catalog> catalog { get; set; } = new List<Catalog>();
     }
 }

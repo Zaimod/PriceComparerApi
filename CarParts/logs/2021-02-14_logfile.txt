@@ -1,9 +1,0 @@
-2021-02-14 19:23:54.5080 INFO Here is info message from our values controller.
-2021-02-14 19:23:54.5661 DEBUG Here is debug message from our values controller.
-2021-02-14 19:23:54.5841 WARN Here is warn message from our values controller.
-2021-02-14 19:23:54.5841 ERROR Here is an error message from our values controller.
-2021-02-14 19:41:09.9301 ERROR Something went wrong inside GetAllCars action: One of the identified items was in an invalid format.
-2021-02-14 19:41:34.3334 ERROR Something went wrong inside GetAllCars action: One of the identified items was in an invalid format.
-2021-02-14 19:41:52.4164 ERROR Something went wrong inside GetAllCars action: One of the identified items was in an invalid format.
-2021-02-14 23:34:49.9345 INFO Returned all cars from database.
-2021-02-14 23:46:28.9789 INFO Returned all cars from database.

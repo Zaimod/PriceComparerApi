@@ -11,51 +11,48 @@ namespace Repository
     public class RepositoryManager : IRepositoryManager
     {
         private RepositoryContext _repoContext;
-        private ICarsRepository _cars;
-        private ISuppliersRepository _suppliers;
-        private IPartsRepository _parts;
+        private IStoreRepository _store;
+        private ICatalogRepository _catalog;
         private ICategoryRepository _category;
-
-        public ICarsRepository Cars
+        private IProductRepository _product;
+        public IStoreRepository store
         {
             get
             {
-                if(_cars == null)
+                if(_store == null)
                 {
-                    _cars = new CarsRepository(_repoContext);
+                    _store = new StoreRepository(_repoContext);
                 }
 
-                return _cars;
+                return _store;
             }
         }
-
-        public ISuppliersRepository Suppliers
+        public IProductRepository product
         {
             get
             {
-                if (_suppliers == null)
+                if (_product == null)
                 {
-                    _suppliers = new SuppliersRepository(_repoContext);
+                    _product = new ProductRepository(_repoContext);
                 }
 
-                return _suppliers;
+                return _product;
             }
         }
-
-        public IPartsRepository Parts
+        public ICatalogRepository catalog
         {
             get
             {
-                if(_parts == null)
+                if(_catalog == null)
                 {
-                    _parts = new PartsRepository(_repoContext);
+                    _catalog = new CatalogRepository(_repoContext);
                 }
 
-                return _parts;
+                return _catalog;
             }
         }
 
-        public ICategoryRepository Category
+        public ICategoryRepository category
         {
             get
             {

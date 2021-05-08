@@ -8,10 +8,10 @@ namespace Contracts
 {
     public interface IRepositoryManager
     {
-        ICarsRepository Cars { get; }
-        ISuppliersRepository Suppliers { get; }
-        IPartsRepository Parts { get; }
-        ICategoryRepository Category { get; }
+        IStoreRepository store { get; }
+        ICatalogRepository catalog { get; }
+        ICategoryRepository category { get; }
+        IProductRepository product { get; }
         Task SaveAsync();
     }
 }

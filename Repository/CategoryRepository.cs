@@ -24,7 +24,7 @@ namespace Repository
                .ToList();
         }
 
-        public Category GetCategoryById(Guid categoryId)
+        public Category GetCategoryById(int categoryId)
         {
             return FindByCondition(category => category.Id.Equals(categoryId))
                 .FirstOrDefault();

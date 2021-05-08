@@ -12,14 +12,12 @@ namespace CarParts
     {
         public MappingProfile()
         {
-            CreateMap<Cars, CarsDto>();
-            CreateMap<Suppliers, SuppliersDto>();
-            CreateMap<Parts, PartsDto>();
+            CreateMap<Store, StoreDto>();
+            CreateMap<Catalog, CatalogDto>();
             CreateMap<Category, CategoryDto>();
 
-            CreateMap<CarForCreationDto, Cars>();
-            CreateMap<SupplierForCreationDto, Suppliers>();
-            CreateMap<PartsForCreationDto, Parts>();
+            CreateMap<StoreForCreationDto, Store>();
+            CreateMap<CatalogForCreationDto, Catalog>();
             CreateMap<CategoryForCreationDto, Category>();
             CreateMap<UserForRegistrationDto, User>();
         }

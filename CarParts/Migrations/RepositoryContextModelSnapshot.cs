@@ -17,117 +17,105 @@ namespace CarParts.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.3");
 
-            modelBuilder.Entity("CarsSuppliers", b =>
+            modelBuilder.Entity("Entities.Models.Catalog", b =>
                 {
-                    b.Property<Guid>("CarsId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("SuppliersId")
-                        .HasColumnType("char(36)");
-
-                    b.HasKey("CarsId", "SuppliersId");
-
-                    b.HasIndex("SuppliersId");
-
-                    b.ToTable("CarsSuppliers");
-                });
-
-            modelBuilder.Entity("Entities.Models.Cars", b =>
-                {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)")
-                        .HasColumnName("CarsId");
+                        .HasColumnType("int");
 
-                    b.Property<string>("Brand")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("varchar(60) CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Model")
-                        .IsRequired()
-                        .HasMaxLength(120)
-                        .HasColumnType("varchar(120) CHARACTER SET utf8mb4");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("cars");
-                });
-
-            modelBuilder.Entity("Entities.Models.Category", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)")
-                        .HasColumnName("CategoryId");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("category");
-                });
-
-            modelBuilder.Entity("Entities.Models.Parts", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)")
-                        .HasColumnName("PartsId");
-
-                    b.Property<bool>("Active")
+                    b.Property<bool>("Discount")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<Guid>("CarsId")
-                        .HasColumnType("char(36)");
+                    b.Property<bool>("FreeDelivery")
+                        .HasColumnType("tinyint(1)");
 
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("char(36)");
+                    b.Property<DateTime>("LastModified")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<double>("NewPrice")
+                        .HasColumnType("double");
+
+                    b.Property<int>("NumbReviews")
+                        .HasColumnType("int");
 
                     b.Property<double>("Price")
                         .HasColumnType("double");
 
-                    b.Property<int>("Quantity")
+                    b.Property<string>("Url")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<int>("categoryId")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("SuppliersId")
-                        .HasColumnType("char(36)");
+                    b.Property<int>("productId")
+                        .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<int>("storeId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("CarsId");
+                    b.HasKey("id");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("categoryId");
 
-                    b.HasIndex("SuppliersId");
+                    b.HasIndex("productId");
 
-                    b.ToTable("parts");
+                    b.HasIndex("storeId");
+
+                    b.ToTable("Catalog");
                 });
 
-            modelBuilder.Entity("Entities.Models.Suppliers", b =>
+            modelBuilder.Entity("Entities.Models.Category", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)")
-                        .HasColumnName("SupplierId");
-
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("varchar(60) CHARACTER SET utf8mb4");
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("varchar(60) CHARACTER SET utf8mb4");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
 
-                    b.ToTable("suppliers");
+                    b.ToTable("Category");
+                });
+
+            modelBuilder.Entity("Entities.Models.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("description")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("img")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("title")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Product");
+                });
+
+            modelBuilder.Entity("Entities.Models.Store", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Store");
                 });
 
             modelBuilder.Entity("Entities.Models.User", b =>
@@ -228,15 +216,15 @@ namespace CarParts.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "03694a8e-de00-4352-8c0a-52fdd2a93e2c",
-                            ConcurrencyStamp = "ffc5a89d-ac55-4dcb-b5bd-386f7ff74e04",
+                            Id = "632b03ac-ac1a-4e96-8953-5cd42148f456",
+                            ConcurrencyStamp = "8b9a3fb1-d04e-48d1-a3b3-53aed141734e",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
-                            Id = "f70fbaa0-ef2b-4dc5-acb1-b3588d8b0e4d",
-                            ConcurrencyStamp = "26ce02ac-6923-4a6b-9efd-e805f4da40ce",
+                            Id = "8a1118b0-6104-4855-b8ef-a776ed4be86d",
+                            ConcurrencyStamp = "20e7ccdf-607b-4b0e-bdfa-a2a3b8d38a44",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -344,46 +332,31 @@ namespace CarParts.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("CarsSuppliers", b =>
+            modelBuilder.Entity("Entities.Models.Catalog", b =>
                 {
-                    b.HasOne("Entities.Models.Cars", null)
-                        .WithMany()
-                        .HasForeignKey("CarsId")
+                    b.HasOne("Entities.Models.Category", "categories")
+                        .WithMany("catalog")
+                        .HasForeignKey("categoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entities.Models.Suppliers", null)
-                        .WithMany()
-                        .HasForeignKey("SuppliersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Entities.Models.Parts", b =>
-                {
-                    b.HasOne("Entities.Models.Cars", "Cars")
-                        .WithMany("Parts")
-                        .HasForeignKey("CarsId")
+                    b.HasOne("Entities.Models.Product", "products")
+                        .WithMany("catalog")
+                        .HasForeignKey("productId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entities.Models.Category", "Categories")
-                        .WithMany("Parts")
-                        .HasForeignKey("CategoryId")
+                    b.HasOne("Entities.Models.Store", "stores")
+                        .WithMany("catalog")
+                        .HasForeignKey("storeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entities.Models.Suppliers", "Suppliers")
-                        .WithMany("Parts")
-                        .HasForeignKey("SuppliersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("categories");
 
-                    b.Navigation("Cars");
+                    b.Navigation("products");
 
-                    b.Navigation("Categories");
-
-                    b.Navigation("Suppliers");
+                    b.Navigation("stores");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -437,19 +410,19 @@ namespace CarParts.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Entities.Models.Cars", b =>
-                {
-                    b.Navigation("Parts");
-                });
-
             modelBuilder.Entity("Entities.Models.Category", b =>
                 {
-                    b.Navigation("Parts");
+                    b.Navigation("catalog");
                 });
 
-            modelBuilder.Entity("Entities.Models.Suppliers", b =>
+            modelBuilder.Entity("Entities.Models.Product", b =>
                 {
-                    b.Navigation("Parts");
+                    b.Navigation("catalog");
+                });
+
+            modelBuilder.Entity("Entities.Models.Store", b =>
+                {
+                    b.Navigation("catalog");
                 });
 #pragma warning restore 612, 618
         }
