@@ -25,4 +25,9 @@
     <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="internal_logs\" />
+    <Folder Include="logs\" />
+  </ItemGroup>
+
 </Project>

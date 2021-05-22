@@ -90,6 +90,9 @@ namespace CarParts.Migrations
                     b.Property<string>("description")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("exclude")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("img")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -216,17 +219,24 @@ namespace CarParts.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "632b03ac-ac1a-4e96-8953-5cd42148f456",
-                            ConcurrencyStamp = "8b9a3fb1-d04e-48d1-a3b3-53aed141734e",
+                            Id = "6baf7707-9216-4cab-a182-2fd983745b95",
+                            ConcurrencyStamp = "0ac6f222-6956-4c46-b2bd-a027b51cf8e2",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
-                            Id = "8a1118b0-6104-4855-b8ef-a776ed4be86d",
-                            ConcurrencyStamp = "20e7ccdf-607b-4b0e-bdfa-a2a3b8d38a44",
+                            Id = "2b8629ff-9d43-4e4b-81b1-e5155768df09",
+                            ConcurrencyStamp = "828bad12-1107-42bc-82e9-6ad2152cb880",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
+                        },
+                        new
+                        {
+                            Id = "53f32d9f-c0e5-4269-b4f8-798037255228",
+                            ConcurrencyStamp = "e65b32b1-7725-4afd-b415-fb5f05895b02",
+                            Name = "User",
+                            NormalizedName = "USER"
                         });
                 });
 

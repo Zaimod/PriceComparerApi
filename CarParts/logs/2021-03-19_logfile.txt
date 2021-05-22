@@ -1,7 +1,0 @@
-2021-03-19 15:30:43.6883 INFO Returned all categories from database.
-2021-03-19 15:31:10.5229 INFO Returned all categories from database.
-2021-03-19 15:33:04.0097 INFO Returned all parts from database.
-2021-03-19 15:33:17.7785 INFO Returned all suppliers from database.
-2021-03-19 15:34:00.6616 INFO Returned all suppliers from database.
-2021-03-19 15:34:10.4320 INFO Returned all suppliers from database.
-2021-03-19 15:34:35.1911 INFO Returned all suppliers from database.

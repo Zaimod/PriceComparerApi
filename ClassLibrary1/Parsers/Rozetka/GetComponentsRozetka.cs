@@ -58,11 +58,25 @@ namespace ParserApplication.Parsers.Rozetka
         {
             string text = "";
 
-            text = item.Descendants("div")
-                .Where(node => node.GetAttributeValue("class", "")
-                .Contains("goods-tile__price price--red")).FirstOrDefault().Descendants("p")
-                .Where(node => node.GetAttributeValue("class", "")
-                .Contains("ng-star-inserted")).FirstOrDefault().InnerText;
+            if (item.Descendants("div").Where(node => node.GetAttributeValue("class", "")
+            .Contains("goods-tile__price price--red")).FirstOrDefault() != null)
+            {
+                text = item.Descendants("div")
+                    .Where(node => node.GetAttributeValue("class", "")
+                    .Contains("goods-tile__price price--red")).FirstOrDefault().Descendants("p")
+                    .Where(node => node.GetAttributeValue("class", "")
+                    .Contains("ng-star-inserted")).FirstOrDefault().InnerText;
+            }
+            else
+            {
+                text = item.Descendants("div")
+                    .Where(node => node.GetAttributeValue("class", "")
+                    .Contains("goods-tile__price ng-star-inserted")).FirstOrDefault().Descendants("p")
+                    .Where(node => node.GetAttributeValue("class", "")
+                    .Contains("ng-star-inserted")).FirstOrDefault().InnerText;
+            }
+               
+            
 
             text = Regex.Replace(text, @"[^0-9.]", "").Trim();
             return Convert.ToDouble(text);
@@ -70,10 +84,24 @@ namespace ParserApplication.Parsers.Rozetka
 
         async public Task<double> GetPrice(HtmlNode item)
         {
-            string text = item.Descendants("div")
-                .Where(node => node.GetAttributeValue("class", "")
-                .Equals("goods-tile__price--old price--gray ng-star-inserted"))
-                .FirstOrDefault().InnerText;
+            string text = "";
+
+            if (item.Descendants("div").Where(node => node.GetAttributeValue("class", "")
+            .Equals("goods-tile__price--old price--gray ng-star-inserted")).FirstOrDefault().InnerText != "")
+            {
+                text = item.Descendants("div")
+                    .Where(node => node.GetAttributeValue("class", "")
+                    .Equals("goods-tile__price--old price--gray ng-star-inserted"))
+                    .FirstOrDefault().InnerText;
+            }
+            else
+            {
+                text = item.Descendants("div")
+                    .Where(node => node.GetAttributeValue("class", "")
+                    .Contains("goods-tile__price ng-star-inserted")).FirstOrDefault().Descendants("p")
+                    .Where(node => node.GetAttributeValue("class", "")
+                    .Contains("ng-star-inserted")).FirstOrDefault().InnerText;
+            }
 
             text = Regex.Replace(text, @"[^0-9.]", "").Trim();
             return Convert.ToDouble(text);
@@ -97,7 +125,7 @@ namespace ParserApplication.Parsers.Rozetka
 
         async public Task<bool> IsDiscount(HtmlNode item)
         {
-            if (dto.NewPrice.Equals(null))
+            if (dto.NewPrice.Equals(dto.Price))
                 return false;
 
             return true;
