@@ -10,6 +10,8 @@ namespace Contracts
     public interface IAuthenticationManager
     {
         Task<bool> ValidateUser(UserForAuthenticationDto userForAuth);
+        Task<bool> IsEmailConfirmed(string userName);
         Task<string> CreateToken();
+        Task<string> GetEmailByUserName(string userName);
     }
 }

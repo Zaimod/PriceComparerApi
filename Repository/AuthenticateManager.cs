@@ -81,5 +81,22 @@ namespace Repository
 
             return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256);
         }
+
+        public async Task<bool> IsEmailConfirmed(string userName)
+        {
+            _user = await _userManager.FindByNameAsync(userName);
+
+            return (_user != null && await _userManager.IsEmailConfirmedAsync(_user));
+        }
+
+        public async Task<string> GetEmailByUserName(string userName)
+        {
+            _user = await _userManager.FindByNameAsync(userName);
+
+            if(_user != null)
+                return _user.Email;
+
+            return null;
+        }
     }
 }

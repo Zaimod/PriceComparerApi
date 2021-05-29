@@ -3,6 +3,7 @@ using CarParts.ActionFilters;
 using Contracts;
 using Entities.DataTransferObjects;
 using Entities.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PriceComparer.Services;
@@ -21,13 +22,14 @@ namespace CarParts.Controllers
         private readonly IMapper _mapper;
         private readonly UserManager<User> _userManager;
         private readonly IAuthenticationManager _authManager;
-
+         
         public AuthenticationController(ILoggerManager logger, IMapper mapper, UserManager<User> userManager, IAuthenticationManager authManager)
         {
             _logger = logger;
             _mapper = mapper;
             _userManager = userManager;
             _authManager = authManager;
+            
         }
 
         [HttpPost]
@@ -54,7 +56,7 @@ namespace CarParts.Controllers
 
             await _userManager.AddToRolesAsync(user, userForRegistration.Roles);
 
-            return StatusCode(201);
+            return Ok();
         }
 
         [HttpPost("login")]
@@ -68,7 +70,37 @@ namespace CarParts.Controllers
                 return Unauthorized();
             }
 
-            return Ok(new { Token = await _authManager.CreateToken() });
+            return Ok(new { Token = await _authManager.CreateToken(), emailConfirmed =  await _authManager.IsEmailConfirmed(user.UserName) });
+        }
+
+        [HttpPost("sendVerificationCode")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> SendVerificationCode([FromBody] SendVerificationCodeDto dto)
+        {
+            EmailService emailService = new EmailService();
+            string email = await _authManager.GetEmailByUserName(dto.userName);
+            string code = emailService.GenerateCode(); 
+
+            //HttpContext.Session.SetString("code", code); 
+
+            await emailService.SendEmailAsync(email, "Verification code", $"Your verification code: {code}");
+
+            return Ok();
+        }
+
+        [HttpPost("changeEmailConfirmed")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> ChangeEmailConfirmed([FromBody] ChangeEmailConfirmedDto dto)
+        {
+            //string sentCode = HttpContext.Session.GetString("code");
+            if (dto.code.Equals(sentCode))
+            {
+                await _authManager.IsEmailConfirmed(dto.userName);
+
+                return Ok();
+            }
+
+            return BadRequest();
         }
     }
 }
