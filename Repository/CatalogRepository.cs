@@ -1,6 +1,7 @@
 ﻿using Contracts;
 using Entities;
 using Entities.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,12 +18,9 @@ namespace Repository
 
         }
 
-        public IEnumerable<Catalog> GetCatalog()
-        {
-            return FindAll()
+        public async Task<IEnumerable<Catalog>> GetCatalog() => await FindAll()
                 .OrderBy(c => c.Name)
-                .ToList();
-        }
+                .ToListAsync();
 
         public IEnumerable<Catalog> GetByIds(IEnumerable<int> ids)
         {
@@ -46,5 +44,26 @@ namespace Repository
         {
             Create(parts);
         }
+
+        public async Task<IEnumerable<Catalog>> GetCatalogBySearch(string searchName)
+        {
+            return await FindByCondition(c => c.Name.Contains(searchName)).OrderBy(c => c.Name).ToListAsync();
+        }
+        public async Task<bool> isNeedToChangePrice(string url, double price)
+        {
+           double oldPrice = FindByCondition(c => c.Url.Equals(url)).FirstOrDefault().NewPrice;
+
+            if (oldPrice != price)
+                return true;
+            else
+                return false;
+        }
+
+        public void ChangePrice(Catalog item)
+        {
+            Update(item);
+        }
+
+        
     }
 }

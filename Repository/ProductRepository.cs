@@ -1,6 +1,7 @@
 ﻿using Contracts;
 using Entities;
 using Entities.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,22 +17,18 @@ namespace Repository
         {
         }
 
-        public void CreateProduct(Product product)
+        public async Task CreateProduct(Product product)
         {
             Create(product);
         }
 
-        public IEnumerable<Product> GetAllProducts()
-        {
-            return FindAll()
-               .OrderBy(c => c.title)
-               .ToList();
-        }
+        public async Task<IEnumerable<Product>> GetAllProducts() => await FindAll()
+                .OrderBy(c => c.title)
+                .ToListAsync();
 
-        public Product GetProductById(int productId)
+        public async Task<Product> GetProductById(int productId)
         {
-            return FindByCondition(category => category.Id.Equals(productId))
-                .FirstOrDefault();
+            return FindByCondition(category => category.Id.Equals(productId)).FirstOrDefault();
         }
     }
 }

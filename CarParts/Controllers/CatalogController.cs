@@ -28,15 +28,27 @@ namespace CarParts.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllCatalog()
+        public async Task<IActionResult> GetAllCatalog()
         {
-            var parts = _repository.catalog.GetCatalog();
+            var parts = await _repository.catalog.GetCatalog();
 
             _logger.LogInfo($"Returned all catalogs from database.");
 
-            var partsResult = _mapper.Map<IEnumerable<CatalogDto>>(parts);
+            var partsResult =  _mapper.Map<IEnumerable<CatalogDto>>(parts);
 
             return Ok(partsResult);
+        }
+
+        [HttpGet("search/{id}", Name = "CatalogBySearch")]
+        public async Task<IActionResult> GetCatalogBySearch(string id)
+        {
+            var catalog = await _repository.catalog.GetCatalogBySearch(id);
+
+            _logger.LogInfo($"Returned all catalogs by search string from database.");
+
+            var catalogResult = _mapper.Map<IEnumerable<CatalogDto>>(catalog);
+
+            return Ok(catalogResult);
         }
 
         [HttpGet("{id}", Name = "CatalogById")]

@@ -35,35 +35,83 @@ namespace CarParts.Controllers.Parser
         public async Task<IActionResult> Test(string search = "iphone", int storeId = 1, int categoryId = 1, int productId = 1)
         {
             _logger.LogInfo($"Testing Parser Controller");
+            try
+            {
+                _parser = new ParserRozetka(storeId, categoryId, productId, _repository);
 
-            _parser = new ParserRozetka(storeId, categoryId, productId, _repository);
+                dto = await _parser.Run(search);
 
-            dto = await _parser.Run(search);
-
-            return Ok(dto);
+                return Ok(dto);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest();
+            }          
         }
 
         [HttpGet("insert")]
         public async Task<IActionResult> Insert(string search = "iphone", int storeId = 1, int categoryId = 1, int productId = 1)
         {
-            _logger.LogInfo($"Insert date Controller");
-
-            _parser = new ParserRozetka(storeId, categoryId, productId, _repository);
-
-            dto = await _parser.Run(search);
-            var itemsEntities = _mapper.Map<IEnumerable<Catalog>>(dto);
-
-            foreach (var item in itemsEntities)
+            _logger.LogInfo($"Insert ParserController: search={search}, storeId={storeId}, categoryId={categoryId}, productId={productId}.");
+           
+            try
             {
-                if (_repository.catalog.GetItemOfCatalogByName(item.Name) == null)
+                _parser = new ParserRozetka(storeId, categoryId, productId, _repository);
+
+                dto = await _parser.Run(search);
+                var itemsEntities = _mapper.Map<IEnumerable<Catalog>>(dto);
+
+                foreach (var item in itemsEntities)
                 {
-                    _repository.catalog.CreateCatalog(item);
+                    if (_repository.catalog.GetItemOfCatalogByName(item.Name) == null)
+                    {
+                        _repository.catalog.CreateCatalog(item);
+                    }
                 }
+
+                await _repository.SaveAsync();
+
+                _logger.LogInfo($"Inserted!");
+
+                return Ok(dto);
             }
+            catch(Exception ex)
+            {
+                _logger.LogError($"Error!");
+                return BadRequest();
+            }
+        }
+        [HttpGet("updatePrice")]
+        public async Task<IActionResult> UpdatePrice(string search = "iphone", int storeId = 1, int categoryId = 1, int productId = 1)
+        {
+            _logger.LogInfo($"Update ParserController: search={search}, storeId={storeId}, categoryId={categoryId}, productId={productId}.");
 
-            await _repository.SaveAsync();
+            try
+            {
+                _parser = new ParserRozetka(storeId, categoryId, productId, _repository);
 
-            return Ok(dto);
+                dto = await _parser.Run(search);
+                var itemsEntities = _mapper.Map<IEnumerable<Catalog>>(dto);
+
+                foreach (var item in itemsEntities)
+                {
+                    if (_repository.catalog.isNeedToChangePrice(item.Url, item.NewPrice).Result)
+                    {
+                        _repository.catalog.Update(item);
+                    }
+                }
+
+                await _repository.SaveAsync();
+
+                _logger.LogInfo($"Updated!");
+
+                return Ok(dto);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error!");
+                return BadRequest();
+            }
         }
     }
 }

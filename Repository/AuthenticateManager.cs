@@ -98,5 +98,17 @@ namespace Repository
 
             return null;
         }
+
+        public async Task<bool> ConfirmEmail(string userName)
+        {
+            _user = await _userManager.FindByNameAsync(userName);
+
+            if (_user != null && !await _userManager.IsEmailConfirmedAsync(_user)) {
+                string token = await _userManager.GenerateEmailConfirmationTokenAsync(_user);
+
+                return  _userManager.ConfirmEmailAsync(_user, token).Result.Succeeded;         
+            }
+            return false;
+        }
     }
 }

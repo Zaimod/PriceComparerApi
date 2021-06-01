@@ -1,0 +1,552 @@
+2021-06-01 09:37:40.9103 INFO Returned all catalogs from database.
+2021-06-01 09:43:58.2996 INFO Returned all catalogs from database.
+2021-06-01 09:48:03.1718 INFO Returned all catalogs from database.
+2021-06-01 09:56:40.3507 INFO Returned all catalogs from database.
+2021-06-01 10:07:06.8739 INFO Returned all catalogs from database.
+2021-06-01 10:17:17.5533 INFO Returned all catalogs from database.
+2021-06-01 10:21:03.7212 INFO Returned all catalogs from database.
+2021-06-01 10:23:06.2701 INFO Returned all catalogs from database.
+2021-06-01 10:32:14.8002 INFO Returned all catalogs from database.
+2021-06-01 10:52:47.1467 INFO Returned all catalogs from database.
+2021-06-01 11:36:54.2832 INFO Returned all catalogs from database.
+2021-06-01 11:36:54.2832 INFO Returned all catalogs from database.
+2021-06-01 11:39:06.0921 INFO Returned all catalogs from database.
+2021-06-01 11:39:06.1514 INFO Returned all catalogs from database.
+2021-06-01 11:43:36.9396 INFO Returned all catalogs from database.
+2021-06-01 11:53:44.5287 INFO Returned all catalogs from database.
+2021-06-01 11:56:12.0443 INFO Returned all catalogs from database.
+2021-06-01 11:59:11.8721 INFO Returned all catalogs from database.
+2021-06-01 12:02:24.1244 INFO Returned all catalogs from database.
+2021-06-01 12:07:08.3744 INFO Returned all catalogs from database.
+2021-06-01 12:08:04.7651 INFO Returned all catalogs from database.
+2021-06-01 12:11:13.0654 INFO Returned all catalogs from database.
+2021-06-01 12:11:33.7265 INFO Returned all catalogs from database.
+2021-06-01 12:15:33.7949 INFO Returned all catalogs from database.
+2021-06-01 12:15:44.4682 INFO Returned all catalogs from database.
+2021-06-01 12:16:05.2292 INFO Returned all catalogs from database.
+2021-06-01 12:33:04.4444 INFO Returned all catalogs from database.
+2021-06-01 12:40:32.3418 INFO Returned all catalogs from database.
+2021-06-01 13:19:53.0535 INFO Returned all catalogs from database.
+2021-06-01 13:50:06.2631 INFO Returned all catalogs from database.
+2021-06-01 13:52:01.3034 INFO Returned all catalogs from database.
+2021-06-01 13:52:12.9211 WARN Authenticate: Authetication failed. Wrong user name or password.
+2021-06-01 13:52:19.5311 INFO Returned all catalogs from database.
+2021-06-01 13:53:53.4312 INFO Returned all catalogs from database.
+2021-06-01 13:54:06.6954 INFO Returned all catalogs from database.
+2021-06-01 13:59:06.9921 INFO Returned all catalogs from database.
+2021-06-01 14:14:09.1433 INFO Returned all catalogs from database.
+2021-06-01 14:18:48.4117 INFO Returned all catalogs from database.
+2021-06-01 14:44:45.5170 INFO Returned all catalogs from database.
+2021-06-01 15:07:46.7162 INFO Returned all catalogs from database.
+2021-06-01 15:07:56.7205 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:08:02.9832 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:08:07.7018 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:08:18.8802 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:08:20.3869 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:08:23.4473 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:09:16.8698 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:09:17.9066 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:09:36.3833 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:10:12.0387 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:10:49.8639 INFO Returned all catalogs from database.
+2021-06-01 15:11:12.9714 INFO Returned all catalogs from database.
+2021-06-01 15:11:27.1738 INFO Returned all catalogs from database.
+2021-06-01 15:12:56.6199 INFO Returned all catalogs from database.
+2021-06-01 15:13:25.3019 INFO Returned all catalogs from database.
+2021-06-01 15:15:46.3592 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:16:07.2494 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:16:12.9258 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:16:17.7091 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:16:22.9486 INFO Returned all catalogs from database.
+2021-06-01 15:17:58.0127 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:18:01.5149 ERROR Something went wrong: Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+CarParts.Controllers.CatalogController.GetCatalogtById (PriceComparer)
+CarParts.Controllers.CatalogController.GetCatalogBySearch (PriceComparer)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2021-06-01 15:24:19.6701 INFO Returned all catalogs by search string from database.
+2021-06-01 15:32:22.0502 INFO Returned all catalogs by search string from database.
+2021-06-01 15:32:42.7945 INFO Returned all catalogs by search string from database.
+2021-06-01 15:32:47.8218 INFO Returned all catalogs by search string from database.
+2021-06-01 15:32:51.3333 INFO Returned all catalogs by search string from database.
+2021-06-01 15:59:38.0296 INFO Returned all catalogs from database.
+2021-06-01 16:05:36.6743 INFO Returned all catalogs from database.
+2021-06-01 16:06:46.2643 INFO Returned all catalogs from database.
+2021-06-01 16:17:14.1622 INFO Returned all catalogs from database.
+2021-06-01 16:18:38.2929 INFO Returned all catalogs from database.
+2021-06-01 16:48:30.6677 INFO Returned all catalogs from database.
+2021-06-01 16:52:16.7530 INFO Testing Parser Controller
+2021-06-01 16:53:15.4151 ERROR Something went wrong: OpenQA.Selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=90.0.4430.212)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Close()
+   at ParserApplication.Parsers.Rozetka.ParserRozetka.Run(String searchQuery) in D:\WorkSpace\CarPartsAPI\ClassLibrary1\Parsers\Rozetka\ParserRozetka.cs:line 92
+   at CarParts.Controllers.Parser.ParserController.Test(String search, Int32 storeId, Int32 categoryId, Int32 productId) in D:\WorkSpace\CarPartsAPI\CarParts\Controllers\Parser\ParserController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-06-01 16:53:17.1114 INFO Testing Parser Controller
+2021-06-01 16:54:57.3278 INFO Returned all catalogs from database.
+2021-06-01 16:55:19.8334 INFO Insert date Controller
+2021-06-01 16:56:00.6351 INFO Insert date Controller
+2021-06-01 16:57:52.6980 INFO Insert date Controller
+2021-06-01 16:58:56.9831 INFO Returned all catalogs from database.
+2021-06-01 17:28:43.1257 INFO Returned all catalogs from database.
+2021-06-01 17:28:43.1257 INFO Returned all catalogs from database.
+2021-06-01 17:28:43.1257 INFO Returned all catalogs from database.
+2021-06-01 17:29:07.6725 INFO Returned all catalogs from database.
+2021-06-01 17:29:59.1897 INFO Returned all catalogs from database.
+2021-06-01 17:55:13.0903 INFO Update ParserController: search=iphone, storeId=1, categoryId=1, productId=1.
+2021-06-01 17:55:26.5959 INFO Updated!
+2021-06-01 17:58:04.0326 INFO Insert ParserController: search=iphone, storeId=1, categoryId=1, productId=1.
+2021-06-01 17:58:17.5202 INFO Inserted!
+2021-06-01 18:00:47.4912 INFO Insert ParserController: search=iphone, storeId=1, categoryId=1, productId=2.
+2021-06-01 18:01:23.6798 INFO Inserted!
+2021-06-01 18:03:19.1329 INFO Insert ParserController: search=iphone, storeId=1, categoryId=1, productId=3.
+2021-06-01 18:03:38.8596 INFO Inserted!
+2021-06-01 18:05:02.3662 INFO Insert ParserController: search=iphone, storeId=1, categoryId=1, productId=3.
+2021-06-01 18:05:24.0620 INFO Inserted!
+2021-06-01 18:14:53.5742 INFO Testing Parser Controller
+2021-06-01 18:16:44.4224 INFO Testing Parser Controller
+2021-06-01 18:21:53.6820 INFO Testing Parser Controller
+2021-06-01 18:22:37.3961 INFO Testing Parser Controller
+2021-06-01 18:26:26.5885 INFO Testing Parser Controller
+2021-06-01 18:28:47.9942 INFO Testing Parser Controller
+2021-06-01 18:30:36.8712 INFO Returned all catalogs from database.
+2021-06-01 18:31:00.0263 INFO Testing Parser Controller
+2021-06-01 18:32:21.7947 INFO Testing Parser Controller
+2021-06-01 18:32:49.7026 INFO Testing Parser Controller
+2021-06-01 18:34:54.8868 INFO Testing Parser Controller
+2021-06-01 18:35:05.0606 INFO Testing Parser Controller
+2021-06-01 18:35:15.0294 INFO Testing Parser Controller
+2021-06-01 18:37:35.2179 INFO Testing Parser Controller
+2021-06-01 18:38:08.6911 INFO Testing Parser Controller
+2021-06-01 18:38:30.4679 INFO Insert ParserController: search=iphone, storeId=1, categoryId=1, productId=3.
+2021-06-01 18:38:47.3412 INFO Inserted!
+2021-06-01 18:40:36.3642 INFO Insert ParserController: search=iphone, storeId=1, categoryId=1, productId=4.
+2021-06-01 18:40:44.8000 INFO Inserted!
+2021-06-01 18:42:21.9338 INFO Insert ParserController: search=iphone, storeId=1, categoryId=1, productId=4.
+2021-06-01 18:42:30.7346 INFO Inserted!
+2021-06-01 18:44:01.7260 INFO Insert ParserController: search=iphone, storeId=1, categoryId=1, productId=5.
+2021-06-01 18:44:10.4793 INFO Inserted!
+2021-06-01 18:45:09.1689 INFO Insert ParserController: search=iphone, storeId=1, categoryId=1, productId=6.
+2021-06-01 18:45:18.3887 INFO Inserted!
+2021-06-01 18:45:35.2260 INFO Insert ParserController: search=iphone, storeId=1, categoryId=1, productId=6.
+2021-06-01 18:45:48.0759 INFO Inserted!
+2021-06-01 18:45:53.7127 INFO Insert ParserController: search=iphone, storeId=1, categoryId=1, productId=7.
+2021-06-01 18:46:01.9352 INFO Inserted!
+2021-06-01 18:46:19.8157 INFO Returned all catalogs from database.
+2021-06-01 19:31:36.0723 INFO Testing Parser Controller
+2021-06-01 19:31:46.2395 INFO Testing Parser Controller
+2021-06-01 19:32:09.7548 INFO Returned all products from database.
+2021-06-01 19:32:09.9161 ERROR Something went wrong: AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Object -> IEnumerable`1
+System.Object -> System.Collections.Generic.IEnumerable`1[[Entities.DataTransferObjects.ProductDto, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Product -> ProductDto
+Entities.Models.Product -> Entities.DataTransferObjects.ProductDto
+   at lambda_method119(Closure , Product , ProductDto , ResolutionContext )
+   at lambda_method118(Closure , Object , IEnumerable`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method118(Closure , Object , IEnumerable`1 , ResolutionContext )
+   at PriceComparer.Controllers.ProductController.GetProducts() in D:\WorkSpace\CarPartsAPI\CarParts\Controllers\ProductController.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-06-01 19:32:40.3156 INFO Returned all products from database.
+2021-06-01 19:32:41.2567 ERROR Something went wrong: AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Object -> IEnumerable`1
+System.Object -> System.Collections.Generic.IEnumerable`1[[Entities.DataTransferObjects.ProductDto, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Product -> ProductDto
+Entities.Models.Product -> Entities.DataTransferObjects.ProductDto
+   at lambda_method119(Closure , Product , ProductDto , ResolutionContext )
+   at lambda_method118(Closure , Object , IEnumerable`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method118(Closure , Object , IEnumerable`1 , ResolutionContext )
+   at PriceComparer.Controllers.ProductController.GetProducts() in D:\WorkSpace\CarPartsAPI\CarParts\Controllers\ProductController.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-06-01 19:33:41.0503 INFO Returned all products from database.
+2021-06-01 19:34:12.7760 INFO Returned all products from database.
+2021-06-01 19:34:38.7924 ERROR Something went wrong: System.InvalidOperationException: Synchronous operations are disallowed. Call WriteAsync or set AllowSynchronousIO to true instead.
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.Server.IIS.Core.WrappingStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.WebUtilities.HttpResponseStreamWriter.FlushInternal(Boolean flushEncoder)
+   at Microsoft.AspNetCore.WebUtilities.HttpResponseStreamWriter.Dispose(Boolean disposing)
+   at System.IO.TextWriter.Close()
+   at Newtonsoft.Json.JsonTextWriter.CloseBufferAndWriter()
+   at Newtonsoft.Json.JsonTextWriter.Close()
+   at Newtonsoft.Json.JsonWriter.Dispose(Boolean disposing)
+   at Newtonsoft.Json.JsonWriter.System.IDisposable.Dispose()
+   at EasyData.AspNetCore.EasyDataApiHandler.WriteJsonResponseAsync(HttpContext context, String result, Func`3 writeContentAction, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataApiHandler.WriteErrorJsonResponseAsync(HttpContext context, String errorMessage, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataApiHandler.HandleExceptionAsync(Exception ex, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataMiddleware`1.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-06-01 19:52:07.1665 INFO Returned all products from database.
+2021-06-01 19:53:41.1145 INFO Returned all products from database.
+2021-06-01 19:57:15.9517 INFO Returned all products from database.
+2021-06-01 19:57:33.9956 INFO Returned all products from database.
+2021-06-01 20:00:14.8344 INFO Returned all products from database.
+2021-06-01 20:13:30.8879 INFO Returned all products from database.
+2021-06-01 20:16:36.8054 INFO Returned all products from database.
+2021-06-01 20:21:17.7850 INFO Returned all products from database.
+2021-06-01 20:23:14.4197 INFO Returned all products from database.
+2021-06-01 20:24:41.2881 INFO Returned all products from database.
+2021-06-01 20:28:49.4328 INFO Returned all products from database.
+2021-06-01 20:30:18.8793 INFO Returned all products from database.
+2021-06-01 20:31:25.5960 INFO Returned all products from database.
+2021-06-01 20:35:07.5502 INFO Returned all products from database.
+2021-06-01 20:35:18.7267 INFO Returned all products from database.
+2021-06-01 20:36:41.5521 INFO Returned all products from database.
+2021-06-01 20:38:04.6068 INFO Returned all products from database.
+2021-06-01 20:38:52.9787 INFO Returned all products from database.
+2021-06-01 20:39:25.4617 INFO Returned all products from database.
+2021-06-01 20:40:29.5005 INFO Returned all products from database.
+2021-06-01 20:41:20.7445 INFO Returned all products from database.
+2021-06-01 20:42:23.4683 INFO Returned all products from database.
+2021-06-01 20:42:47.8309 INFO Returned all products from database.
+2021-06-01 20:42:48.0408 INFO Returned all products from database.
+2021-06-01 20:42:48.3002 INFO Returned all products from database.
+2021-06-01 20:42:50.0088 INFO Returned all products from database.
+2021-06-01 20:42:50.1364 INFO Returned all products from database.
+2021-06-01 20:42:50.1515 INFO Returned all products from database.
+2021-06-01 20:42:50.5608 INFO Returned all products from database.
+2021-06-01 20:42:50.7198 INFO Returned all products from database.
+2021-06-01 20:42:51.1746 INFO Returned all products from database.
+2021-06-01 20:42:51.4451 INFO Returned all products from database.
+2021-06-01 20:42:51.5599 INFO Returned all products from database.
+2021-06-01 20:42:52.4598 INFO Returned all products from database.
+2021-06-01 20:42:52.7541 INFO Returned all products from database.
+2021-06-01 20:42:52.9878 INFO Returned all products from database.
+2021-06-01 20:42:53.0909 INFO Returned all products from database.
+2021-06-01 20:42:53.4084 INFO Returned all products from database.
+2021-06-01 20:42:53.7155 INFO Returned all products from database.
+2021-06-01 20:42:53.7990 INFO Returned all products from database.
+2021-06-01 20:42:54.1496 INFO Returned all products from database.
+2021-06-01 20:42:54.5284 INFO Returned all products from database.
+2021-06-01 20:42:54.6804 INFO Returned all products from database.
+2021-06-01 20:42:55.5764 INFO Returned all products from database.
+2021-06-01 20:42:55.7617 INFO Returned all products from database.
+2021-06-01 20:42:55.7617 INFO Returned all products from database.
+2021-06-01 20:42:55.7777 INFO Returned all products from database.
+2021-06-01 20:42:55.7777 INFO Returned all products from database.
+2021-06-01 20:42:55.8793 INFO Returned all products from database.
+2021-06-01 20:42:55.8932 INFO Returned all products from database.
+2021-06-01 20:42:56.0136 INFO Returned all products from database.
+2021-06-01 20:42:56.3895 INFO Returned all products from database.
+2021-06-01 20:42:56.5411 INFO Returned all products from database.
+2021-06-01 20:42:56.5554 INFO Returned all products from database.
+2021-06-01 20:42:58.4683 INFO Returned all products from database.
+2021-06-01 20:42:58.6193 INFO Returned all products from database.
+2021-06-01 20:42:59.2988 INFO Returned all products from database.
+2021-06-01 20:42:59.4774 INFO Returned all products from database.
+2021-06-01 20:43:03.3783 INFO Returned all products from database.
+2021-06-01 20:43:03.5190 INFO Returned all products from database.
+2021-06-01 20:43:03.5877 INFO Returned all products from database.
+2021-06-01 20:43:05.0849 INFO Returned all products from database.
+2021-06-01 20:43:05.2284 INFO Returned all products from database.
+2021-06-01 20:43:05.4267 INFO Returned all products from database.
+2021-06-01 20:43:06.8235 INFO Returned all products from database.
+2021-06-01 20:43:07.2358 INFO Returned all products from database.
+2021-06-01 20:43:08.1956 INFO Returned all products from database.
+2021-06-01 20:43:08.9824 INFO Returned all products from database.
+2021-06-01 20:43:09.5888 INFO Returned all products from database.
+2021-06-01 20:43:09.7266 INFO Returned all products from database.
+2021-06-01 20:43:09.8885 INFO Returned all products from database.
+2021-06-01 20:43:10.4419 INFO Returned all products from database.
+2021-06-01 20:43:10.5846 INFO Returned all products from database.
+2021-06-01 20:43:10.7686 INFO Returned all products from database.
+2021-06-01 20:43:12.5391 INFO Returned all products from database.
+2021-06-01 20:58:31.5902 INFO Returned all products from database.
+2021-06-01 21:05:03.7120 INFO Returned all products from database.
+2021-06-01 21:09:01.3613 INFO Returned all products from database.
+2021-06-01 21:10:59.3507 INFO Returned all products from database.

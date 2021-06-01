@@ -41,7 +41,7 @@ namespace ParserApplication.Parsers.Rozetka
             dto.categoryId = categoryId;
             dto.storeId = storeId;
             dto.productId = productId;
-            CheckNameForProduct();
+           
         }
 
         async public Task<string> GetName(HtmlNode item)
@@ -131,22 +131,27 @@ namespace ParserApplication.Parsers.Rozetka
             return true;
         }
 
-        async public void CheckNameForProduct()
+        async public Task<bool> CheckNameForProduct(HtmlNode item)
         {
+            string name = await GetName(item);
+
+
             List<string> excludeNames = new List<string>();
-            excludeNames.AddRange(_repository.product.GetProductById(productId).exclude.Split(", "));
+            excludeNames.AddRange(_repository.product.GetProductById(productId).Result.exclude.Split(", "));
 
 
-            if (!dto.Name.Contains(_repository.product.GetProductById(productId).title, StringComparison.OrdinalIgnoreCase))
+            if (!name.Contains(_repository.product.GetProductById(productId).Result.title, StringComparison.OrdinalIgnoreCase))
             {
-                dto.Name = null;
+                return false;
             }
-            else if(dto.Name.Contains(_repository.product.GetProductById(productId).title, StringComparison.OrdinalIgnoreCase))
+            else if(name.Contains(_repository.product.GetProductById(productId).Result.title, StringComparison.OrdinalIgnoreCase))
             {
-                if (excludeNames.Any(name => dto.Name.Contains(name, StringComparison.CurrentCultureIgnoreCase)))
-                    dto.Name = null;
+                if (excludeNames.FirstOrDefault() == "")
+                    return true;
+                if (excludeNames.Any(n => name.Contains(n, StringComparison.CurrentCultureIgnoreCase)))
+                    return false;
             }
-
+            return true;
            
         }
 

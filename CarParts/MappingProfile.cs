@@ -15,6 +15,7 @@ namespace CarParts
             CreateMap<Store, StoreDto>();
             CreateMap<Catalog, CatalogDto>();
             CreateMap<Category, CategoryDto>();
+            CreateMap<Product, ProductDto>();
 
             CreateMap<StoreForCreationDto, Store>();
             CreateMap<CatalogForCreationDto, Catalog>();

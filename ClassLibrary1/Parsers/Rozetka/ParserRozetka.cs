@@ -42,7 +42,7 @@ namespace ParserApplication.Parsers.Rozetka
                 driver.Navigate()
                     .GoToUrl("https://rozetka.com.ua/ua/");
                 var seacrhItem = driver.FindElement(By.Name("search"));
-                seacrhItem.SendKeys("iphone");
+                seacrhItem.SendKeys(searchQuery);
 
                 driver.FindElement(By.ClassName("search-form__submit")).Click();
 
@@ -70,11 +70,16 @@ namespace ParserApplication.Parsers.Rozetka
 
                     foreach (var item in catalog)
                     {
-                        await componentsRozetka.Create(item);
-                        var dto = await componentsRozetka.GetDto();
+                        bool isNeedToGet = componentsRozetka.CheckNameForProduct(item).Result;
 
-                        if(dto.Name != null)
-                            dtos.Add(dto);
+                        if (isNeedToGet)
+                        {
+                            await componentsRozetka.Create(item);
+                            var dto = await componentsRozetka.GetDto();
+
+                            if (dto.Name != null)
+                                dtos.Add(dto);
+                        }
                     }
     
                     return dtos;

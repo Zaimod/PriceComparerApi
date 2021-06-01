@@ -6,6 +6,7 @@ using Entities.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using PriceComparer.Services;
 using System;
 using System.Collections.Generic;
@@ -22,14 +23,15 @@ namespace CarParts.Controllers
         private readonly IMapper _mapper;
         private readonly UserManager<User> _userManager;
         private readonly IAuthenticationManager _authManager;
-         
-        public AuthenticationController(ILoggerManager logger, IMapper mapper, UserManager<User> userManager, IAuthenticationManager authManager)
+        private IMemoryCache _cache;
+        public AuthenticationController(ILoggerManager logger, IMapper mapper, UserManager<User> userManager, IAuthenticationManager authManager,
+            IMemoryCache cache)
         {
             _logger = logger;
             _mapper = mapper;
             _userManager = userManager;
             _authManager = authManager;
-            
+            _cache = cache;
         }
 
         [HttpPost]
@@ -37,8 +39,6 @@ namespace CarParts.Controllers
         public async Task<IActionResult> RegisterUser([FromBody] UserForRegistrationDto userForRegistration)
         {
             EmailService emailService = new EmailService();
-
-            await emailService.SendEmailAsync(userForRegistration.Email, "Verification code", $"Your verification code: {emailService.GenerateCode()}");
 
             var user = _mapper.Map<User>(userForRegistration);
 
@@ -79,25 +79,32 @@ namespace CarParts.Controllers
         {
             EmailService emailService = new EmailService();
             string email = await _authManager.GetEmailByUserName(dto.userName);
-            string code = emailService.GenerateCode(); 
+            string code = emailService.GenerateCode();
 
+            _cache.Set("code", code, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(3)));
+             
             //HttpContext.Session.SetString("code", code); 
 
             await emailService.SendEmailAsync(email, "Verification code", $"Your verification code: {code}");
-
+            
             return Ok();
         }
-
+        
         [HttpPost("changeEmailConfirmed")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> ChangeEmailConfirmed([FromBody] ChangeEmailConfirmedDto dto)
         {
-            //string sentCode = HttpContext.Session.GetString("code");
-            if (dto.code.Equals(sentCode))
-            {
-                await _authManager.IsEmailConfirmed(dto.userName);
+            string codeEmail = null;
 
-                return Ok();
+            if (_cache.TryGetValue("code", out codeEmail))
+            {
+                if (dto.code.Equals(codeEmail))
+                {
+                    await _authManager.ConfirmEmail(dto.userName);
+                    _cache.Remove("code");
+
+                    return Ok();
+                }
             }
 
             return BadRequest();

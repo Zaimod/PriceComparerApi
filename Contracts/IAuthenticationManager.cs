@@ -11,7 +11,8 @@ namespace Contracts
     {
         Task<bool> ValidateUser(UserForAuthenticationDto userForAuth);
         Task<bool> IsEmailConfirmed(string userName);
+        Task<bool> ConfirmEmail(string userName);
         Task<string> CreateToken();
         Task<string> GetEmailByUserName(string userName);
-    }
+     }
 }
