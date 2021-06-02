@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarParts.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20210521175350_user_role")]
-    partial class user_role
+    [Migration("20210602125208_addRelationship")]
+    partial class addRelationship
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -89,6 +89,9 @@ namespace CarParts.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int>("categoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("description")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -98,10 +101,15 @@ namespace CarParts.Migrations
                     b.Property<string>("img")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<int>("numbReviews")
+                        .HasColumnType("int");
+
                     b.Property<string>("title")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("categoryId");
 
                     b.ToTable("Product");
                 });
@@ -221,22 +229,22 @@ namespace CarParts.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "6baf7707-9216-4cab-a182-2fd983745b95",
-                            ConcurrencyStamp = "0ac6f222-6956-4c46-b2bd-a027b51cf8e2",
+                            Id = "ba1f15a4-cfe0-46b1-9dfe-ff288da568e2",
+                            ConcurrencyStamp = "48d73ab7-48c4-422e-b3cb-45137881b973",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
-                            Id = "2b8629ff-9d43-4e4b-81b1-e5155768df09",
-                            ConcurrencyStamp = "828bad12-1107-42bc-82e9-6ad2152cb880",
+                            Id = "165b186d-1ded-487d-bb21-3bb4f5a083a4",
+                            ConcurrencyStamp = "45a7936a-cd06-4451-b87f-9813e5da0f1f",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "53f32d9f-c0e5-4269-b4f8-798037255228",
-                            ConcurrencyStamp = "e65b32b1-7725-4afd-b415-fb5f05895b02",
+                            Id = "761fdc82-b653-4427-ba02-6b6c62cffc8b",
+                            ConcurrencyStamp = "6d967c1d-cfce-4a42-aca8-caaa62228bbd",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -371,6 +379,17 @@ namespace CarParts.Migrations
                     b.Navigation("stores");
                 });
 
+            modelBuilder.Entity("Entities.Models.Product", b =>
+                {
+                    b.HasOne("Entities.Models.Category", "category")
+                        .WithMany("products")
+                        .HasForeignKey("categoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("category");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -425,6 +444,8 @@ namespace CarParts.Migrations
             modelBuilder.Entity("Entities.Models.Category", b =>
                 {
                     b.Navigation("catalog");
+
+                    b.Navigation("products");
                 });
 
             modelBuilder.Entity("Entities.Models.Product", b =>
