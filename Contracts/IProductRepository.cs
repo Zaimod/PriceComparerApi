@@ -12,5 +12,6 @@ namespace Contracts
         Task<IEnumerable<Product>> GetAllProducts();
         Task<Product> GetProductById(int productId);
         Task CreateProduct(Product product);
+        Task<IEnumerable<Product>> GetProductsByCategoryId(int categoryId);
     }
 }

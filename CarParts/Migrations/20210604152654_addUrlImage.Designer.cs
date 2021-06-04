@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarParts.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20210602121519_addNewFieldForProductTable")]
-    partial class addNewFieldForProductTable
+    [Migration("20210604152654_addUrlImage")]
+    partial class addUrlImage
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -78,6 +78,9 @@ namespace CarParts.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("UrlImage")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.HasKey("Id");
 
                     b.ToTable("Category");
@@ -87,6 +90,9 @@ namespace CarParts.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("categoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("description")
@@ -105,6 +111,8 @@ namespace CarParts.Migrations
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("categoryId");
 
                     b.ToTable("Product");
                 });
@@ -224,22 +232,22 @@ namespace CarParts.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7d371314-b300-4abf-a0b1-a9a79eba5b41",
-                            ConcurrencyStamp = "f59bcfb4-2c77-4e29-b978-f26597c80ae6",
+                            Id = "82518825-557d-47e0-ab67-6e228d6255d1",
+                            ConcurrencyStamp = "d622a12f-3f81-495d-af48-100e8d931112",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
-                            Id = "7098dc5a-cdf7-4980-964a-5676b7f7e43f",
-                            ConcurrencyStamp = "6f5499dc-56ae-42f0-aa30-7fe58f8cd103",
+                            Id = "d09cf83c-423d-49dd-a97f-5b992ede8566",
+                            ConcurrencyStamp = "225e8fa4-e707-45b1-930a-f638f5be2330",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "051e6287-ab3d-4246-a56b-9a127b6b0368",
-                            ConcurrencyStamp = "621ef929-832b-41df-9c66-ef6b9f320a47",
+                            Id = "84cb2235-7bab-49fd-9ce1-5b3b4b8b3c38",
+                            ConcurrencyStamp = "037b1a84-c17e-4293-83c4-302d4e669666",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -374,6 +382,17 @@ namespace CarParts.Migrations
                     b.Navigation("stores");
                 });
 
+            modelBuilder.Entity("Entities.Models.Product", b =>
+                {
+                    b.HasOne("Entities.Models.Category", "category")
+                        .WithMany("products")
+                        .HasForeignKey("categoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("category");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -428,6 +447,8 @@ namespace CarParts.Migrations
             modelBuilder.Entity("Entities.Models.Category", b =>
                 {
                     b.Navigation("catalog");
+
+                    b.Navigation("products");
                 });
 
             modelBuilder.Entity("Entities.Models.Product", b =>

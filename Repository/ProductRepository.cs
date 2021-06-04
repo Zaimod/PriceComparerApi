@@ -30,5 +30,10 @@ namespace Repository
         {
             return FindByCondition(category => category.Id.Equals(productId)).FirstOrDefault();
         }
+
+        public async Task<IEnumerable<Product>> GetProductsByCategoryId(int categoryId) => 
+            await FindByCondition(c => c.categoryId == categoryId)
+            .OrderBy(c => c.title)
+            .ToListAsync();
     }
 }

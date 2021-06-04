@@ -32,9 +32,26 @@ namespace PriceComparer.Controllers
 
             _logger.LogInfo($"Returned all products from database.");
 
-            var partsResult = _mapper.Map<IEnumerable<ProductDto>>(products);
+            var productsResult = _mapper.Map<IEnumerable<ProductDto>>(products);
 
-            return Ok(partsResult);
+            return Ok(productsResult);
         }
+
+        [HttpGet("byCategoryId/{id}", Name = "productsByCategoryId")]
+        public async Task<IActionResult> GetCatalogtByCategoryId(int id)
+        {
+            var products = await _repository.product.GetProductsByCategoryId(id);
+            if (products == null)
+            {
+                _logger.LogInfo($"Products with CategoryId: {id} doesn't exist in the database.");
+                return NotFound();
+            }
+            else
+            {
+                var productsResult = _mapper.Map<IEnumerable<ProductDto>>(products);
+                return Ok(productsResult);
+            }
+        }
+
     }
 }
