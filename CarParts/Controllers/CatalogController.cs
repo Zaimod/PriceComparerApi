@@ -3,6 +3,7 @@ using CarParts.ModelBuilders;
 using Contracts;
 using Entities.DataTransferObjects;
 using Entities.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace CarParts.Controllers
 {
+    //[Authorize]
     [Route("api/catalog")]
     [ApiController]
     public class CatalogController : ControllerBase
@@ -20,6 +22,12 @@ namespace CarParts.Controllers
         private IRepositoryManager _repository;
         private IMapper _mapper;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CatalogController"/> class.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
+        /// <param name="repository">The repository.</param>
+        /// <param name="mapper">The mapper.</param>
         public CatalogController(ILoggerManager logger, IRepositoryManager repository, IMapper mapper)
         {
             _logger = logger;
@@ -27,6 +35,10 @@ namespace CarParts.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Gets all catalog.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAllCatalog()
         {
@@ -39,6 +51,11 @@ namespace CarParts.Controllers
             return Ok(partsResult);
         }
 
+        /// <summary>
+        /// Gets the catalog by search.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         [HttpGet("search/{id}", Name = "CatalogBySearch")]
         public async Task<IActionResult> GetCatalogBySearch(string id)
         {
@@ -51,6 +68,28 @@ namespace CarParts.Controllers
             return Ok(catalogResult);
         }
 
+        /// <summary>
+        /// Gets the catalog by product identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
+        [HttpGet("productId/{id}", Name = "CatalogByProductId")]
+        public async Task<IActionResult> GetCatalogByProductId(int id)
+        {
+            var catalog = await _repository.catalog.GetCatalogByProductId(id);
+
+            _logger.LogInfo($"Returned all catalogs by product id from database.");
+
+            var catalogResult = _mapper.Map<IEnumerable<CatalogDto>>(catalog);
+
+            return Ok(catalogResult);
+        }
+
+        /// <summary>
+        /// Gets the catalogt by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         [HttpGet("{id}", Name = "CatalogById")]
         public IActionResult GetCatalogtById(int id)
         {
@@ -67,6 +106,11 @@ namespace CarParts.Controllers
             }
         }
 
+        /// <summary>
+        /// Gets the catalog collection.
+        /// </summary>
+        /// <param name="ids">The ids.</param>
+        /// <returns></returns>
         [HttpGet("collection/({ids})", Name = "CatalogCollection")]
         public IActionResult GetCatalogCollection([ModelBinder(BinderType = typeof(ArrayModelBinder))] IEnumerable<int> ids)
         {
@@ -89,6 +133,11 @@ namespace CarParts.Controllers
             return Ok(carPartsToReturn);
         }
 
+        /// <summary>
+        /// Creates the catalog.
+        /// </summary>
+        /// <param name="catalog">The catalog.</param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> CreateCatalog([FromBody] CatalogForCreationDto catalog)
         {
@@ -116,6 +165,11 @@ namespace CarParts.Controllers
             return CreatedAtRoute("CarPartsById", new { id = carPartsToReturn.id }, carPartsToReturn);
         }
 
+        /// <summary>
+        /// Creates the catalog collection.
+        /// </summary>
+        /// <param name="partsCollection">The parts collection.</param>
+        /// <returns></returns>
         [HttpPost("collection")]
         public async Task<IActionResult> CreateCatalogCollection([FromBody] IEnumerable<CatalogForCreationDto> partsCollection)
         {

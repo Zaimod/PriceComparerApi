@@ -20,7 +20,7 @@ namespace Repository
         public IEnumerable<Category> GetAllCategories()
         {
             return FindAll()
-               .OrderBy(c => c.Name)
+               .OrderBy(c => c.Id)
                .ToList();
         }
 

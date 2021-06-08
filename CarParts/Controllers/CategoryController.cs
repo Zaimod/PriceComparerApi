@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace CarParts.Controllers
 {
+
     [Route("api/category")]
     [ApiController]
     public class CategoryController : ControllerBase
@@ -19,6 +20,12 @@ namespace CarParts.Controllers
         private IRepositoryManager _repository;
         private IMapper _mapper;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CategoryController"/> class.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
+        /// <param name="repository">The repository.</param>
+        /// <param name="mapper">The mapper.</param>
         public CategoryController(ILoggerManager logger, IRepositoryManager repository, IMapper mapper)
         {
             _logger = logger;
@@ -26,6 +33,10 @@ namespace CarParts.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Gets all categories.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult GetAllCategories()
         {
@@ -38,6 +49,11 @@ namespace CarParts.Controllers
             return Ok(categoriesResult);
         }
 
+        /// <summary>
+        /// Gets the category by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         [HttpGet("{id}", Name = "CategoryById")]
         public IActionResult GetCategoryById(int id)
         {
@@ -54,6 +70,11 @@ namespace CarParts.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates the category.
+        /// </summary>
+        /// <param name="category">The category.</param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> CreateCategory([FromBody] CategoryForCreationDto category)
         {

@@ -23,7 +23,7 @@ namespace Repository
         }
 
         public async Task<IEnumerable<Product>> GetAllProducts() => await FindAll()
-                .OrderBy(c => c.title)
+                .OrderByDescending(c => c.numbReviews)
                 .ToListAsync();
 
         public async Task<Product> GetProductById(int productId)
@@ -33,7 +33,7 @@ namespace Repository
 
         public async Task<IEnumerable<Product>> GetProductsByCategoryId(int categoryId) => 
             await FindByCondition(c => c.categoryId == categoryId)
-            .OrderBy(c => c.title)
+            .OrderByDescending(c => c.numbReviews)
             .ToListAsync();
     }
 }

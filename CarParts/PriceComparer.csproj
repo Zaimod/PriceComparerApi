@@ -27,8 +27,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="internal_logs\" />
     <Folder Include="logs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="internal_logs\internallog.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="internal_logs\internallog.txt">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -85,6 +85,7 @@ namespace CarParts
             });          
 
             services.AddAuthentication();
+            services.AddHttpContextAccessor();
             services.ConfigureIdentity();
             services.AddScoped<ValidationFilterAttribute>();
             services.ConfigureJWT(Configuration);
@@ -108,6 +109,9 @@ namespace CarParts
             }
             else
             {
+                app.UseSwagger();
+                app.UseReDoc(c => c.SpecUrl("/swagger/v1/swagger.json"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PriceComparison v1"));
                 app.UseHsts();
             }
 

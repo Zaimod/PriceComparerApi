@@ -140,6 +140,12 @@ namespace CarParts.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("Birthday")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("City")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -181,6 +187,9 @@ namespace CarParts.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("SecurityStamp")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Sex")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -230,22 +239,22 @@ namespace CarParts.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "82518825-557d-47e0-ab67-6e228d6255d1",
-                            ConcurrencyStamp = "d622a12f-3f81-495d-af48-100e8d931112",
+                            Id = "99e0d328-9b40-468b-81ea-0ee63e28a0b7",
+                            ConcurrencyStamp = "47a3c75b-d321-4619-98b9-0f4451016681",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
-                            Id = "d09cf83c-423d-49dd-a97f-5b992ede8566",
-                            ConcurrencyStamp = "225e8fa4-e707-45b1-930a-f638f5be2330",
+                            Id = "2eff913a-226a-4583-a0e1-7c2a0150895c",
+                            ConcurrencyStamp = "4b7295eb-f564-41cd-b180-b21270ae1dca",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "84cb2235-7bab-49fd-9ce1-5b3b4b8b3c38",
-                            ConcurrencyStamp = "037b1a84-c17e-4293-83c4-302d4e669666",
+                            Id = "5efb9d41-e820-415e-98d1-b7f50559767c",
+                            ConcurrencyStamp = "ebdd9fbc-5875-487b-944d-d66844d7a634",
                             Name = "User",
                             NormalizedName = "USER"
                         });

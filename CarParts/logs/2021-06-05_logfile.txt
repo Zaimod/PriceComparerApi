@@ -1,0 +1,94 @@
+2021-06-05 11:03:27.9874 INFO Returned all products from database.
+2021-06-05 11:03:30.0443 INFO Returned all categories from database.
+2021-06-05 11:27:56.3205 INFO Returned all products from database.
+2021-06-05 11:28:01.0994 INFO Returned all categories from database.
+2021-06-05 11:28:30.5895 INFO Returned all products from database.
+2021-06-05 11:28:30.7005 INFO Returned all products from database.
+2021-06-05 11:28:31.6275 INFO Returned all products from database.
+2021-06-05 11:28:31.8798 INFO Returned all products from database.
+2021-06-05 11:28:32.8517 INFO Returned all products from database.
+2021-06-05 11:28:33.0399 INFO Returned all products from database.
+2021-06-05 11:28:33.2786 INFO Returned all products from database.
+2021-06-05 11:28:34.7475 INFO Returned all products from database.
+2021-06-05 11:28:34.8869 INFO Returned all products from database.
+2021-06-05 11:28:35.0465 INFO Returned all products from database.
+2021-06-05 11:40:48.3963 INFO Returned all products from database.
+2021-06-05 11:40:58.8044 INFO Returned all categories from database.
+2021-06-05 11:43:19.8261 INFO Returned all products from database.
+2021-06-05 11:43:25.3078 INFO Returned all categories from database.
+2021-06-05 11:43:40.1262 INFO Returned all products from database.
+2021-06-05 11:47:06.9493 INFO Returned all products from database.
+2021-06-05 12:25:47.5800 INFO Returned all products from database.
+2021-06-05 12:27:19.0986 INFO Returned all products from database.
+2021-06-05 12:27:25.9435 INFO Returned all categories from database.
+2021-06-05 12:43:12.4348 INFO Returned all products from database.
+2021-06-05 13:00:54.2124 INFO Returned all catalogs by product id from database.
+2021-06-05 13:00:57.7622 INFO Returned all catalogs by product id from database.
+2021-06-05 13:01:02.8198 INFO Returned all catalogs by product id from database.
+2021-06-05 13:03:26.8461 INFO Returned all catalogs by product id from database.
+2021-06-05 13:04:38.7205 INFO Returned all catalogs by product id from database.
+2021-06-05 13:14:56.6536 INFO Returned all products from database.
+2021-06-05 13:15:01.4162 INFO Returned all categories from database.
+2021-06-05 13:15:02.7545 INFO Returned all products from database.
+2021-06-05 13:15:18.1270 INFO Returned all products from database.
+2021-06-05 13:15:18.2669 INFO Returned all products from database.
+2021-06-05 13:15:19.9413 INFO Returned all products from database.
+2021-06-05 13:15:23.8619 INFO Returned all products from database.
+2021-06-05 13:17:13.4232 INFO Returned all products from database.
+2021-06-05 13:17:17.3738 INFO Returned all categories from database.
+2021-06-05 14:47:51.9724 INFO Returned all catalogs by product id from database.
+2021-06-05 15:26:18.5109 INFO Returned all products from database.
+2021-06-05 15:26:25.1250 INFO Returned all catalogs by product id from database.
+2021-06-05 16:09:04.1294 INFO Returned all products from database.
+2021-06-05 16:09:05.6035 INFO Returned all categories from database.
+2021-06-05 16:29:30.5645 ERROR Something went wrong: System.InvalidOperationException: Synchronous operations are disallowed. Call WriteAsync or set AllowSynchronousIO to true instead.
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.Server.IIS.Core.WrappingStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.WebUtilities.HttpResponseStreamWriter.Dispose(Boolean disposing)
+   at System.IO.TextWriter.Close()
+   at Newtonsoft.Json.JsonWriter.System.IDisposable.Dispose()
+   at EasyData.AspNetCore.EasyDataApiHandler.WriteJsonResponseAsync(HttpContext context, String result, Func`3 writeContentAction, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataApiHandler.WriteErrorJsonResponseAsync(HttpContext context, String errorMessage, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataApiHandler.HandleExceptionAsync(Exception ex, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataMiddleware`1.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-06-05 16:29:50.6029 ERROR Something went wrong: System.InvalidOperationException: Synchronous operations are disallowed. Call WriteAsync or set AllowSynchronousIO to true instead.
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.Server.IIS.Core.WrappingStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.WebUtilities.HttpResponseStreamWriter.FlushInternal(Boolean flushEncoder)
+   at Microsoft.AspNetCore.WebUtilities.HttpResponseStreamWriter.Dispose(Boolean disposing)
+   at System.IO.TextWriter.Close()
+   at Newtonsoft.Json.JsonTextWriter.CloseBufferAndWriter()
+   at Newtonsoft.Json.JsonTextWriter.Close()
+   at Newtonsoft.Json.JsonWriter.Dispose(Boolean disposing)
+   at Newtonsoft.Json.JsonWriter.System.IDisposable.Dispose()
+   at EasyData.AspNetCore.EasyDataApiHandler.WriteJsonResponseAsync(HttpContext context, String result, Func`3 writeContentAction, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataApiHandler.WriteErrorJsonResponseAsync(HttpContext context, String errorMessage, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataApiHandler.HandleExceptionAsync(Exception ex, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataMiddleware`1.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-06-05 16:35:49.4749 ERROR Something went wrong: System.InvalidOperationException: Synchronous operations are disallowed. Call WriteAsync or set AllowSynchronousIO to true instead.
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.Server.IIS.Core.WrappingStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.WebUtilities.HttpResponseStreamWriter.FlushInternal(Boolean flushEncoder)
+   at Microsoft.AspNetCore.WebUtilities.HttpResponseStreamWriter.Dispose(Boolean disposing)
+   at System.IO.TextWriter.Close()
+   at Newtonsoft.Json.JsonTextWriter.CloseBufferAndWriter()
+   at Newtonsoft.Json.JsonTextWriter.Close()
+   at Newtonsoft.Json.JsonWriter.Dispose(Boolean disposing)
+   at Newtonsoft.Json.JsonWriter.System.IDisposable.Dispose()
+   at EasyData.AspNetCore.EasyDataApiHandler.WriteJsonResponseAsync(HttpContext context, String result, Func`3 writeContentAction, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataApiHandler.WriteErrorJsonResponseAsync(HttpContext context, String errorMessage, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataApiHandler.HandleExceptionAsync(Exception ex, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataMiddleware`1.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-06-05 17:38:38.1742 INFO Returned all products from database.

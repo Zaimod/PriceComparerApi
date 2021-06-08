@@ -1,0 +1,182 @@
+2021-06-07 15:22:42.3454 INFO Returned all products from database.
+2021-06-07 15:22:44.2946 INFO Get User success!
+2021-06-07 15:26:06.9706 INFO Returned all products from database.
+2021-06-07 15:26:11.8335 INFO Get User success!
+2021-06-07 15:33:37.8828 INFO Get User success!
+2021-06-07 15:33:38.0745 INFO Returned all products from database.
+2021-06-07 15:36:00.4512 INFO Get User success!
+2021-06-07 15:36:01.4269 INFO Returned all products from database.
+2021-06-07 15:37:39.1472 INFO Returned all products from database.
+2021-06-07 15:37:47.9581 INFO Get User success!
+2021-06-07 15:38:20.1891 INFO Returned all products from database.
+2021-06-07 15:38:27.7593 INFO Get User success!
+2021-06-07 15:40:42.8073 INFO Returned all products from database.
+2021-06-07 15:41:20.0254 INFO Returned all products from database.
+2021-06-07 15:41:23.9554 INFO Get User success!
+2021-06-07 15:57:24.3467 INFO Returned all products from database.
+2021-06-07 15:57:33.8837 INFO Returned all categories from database.
+2021-06-07 15:57:36.2779 INFO Returned all products from database.
+2021-06-07 15:57:36.2779 INFO Returned all products from database.
+2021-06-07 16:13:10.1371 INFO Returned all products from database.
+2021-06-07 16:13:12.9272 INFO Get User success!
+2021-06-07 16:13:45.8930 INFO Returned all products from database.
+2021-06-07 16:13:49.0815 INFO Get User success!
+2021-06-07 16:24:19.7930 INFO Returned all products from database.
+2021-06-07 16:24:41.5845 INFO Get User success!
+2021-06-07 16:30:43.3401 INFO Returned all products from database.
+2021-06-07 16:30:47.0042 INFO Get User success!
+2021-06-07 17:35:50.4032 INFO Returned all products from database.
+2021-06-07 17:35:50.4490 INFO Get User success!
+2021-06-07 17:43:50.0589 INFO Returned all products from database.
+2021-06-07 17:43:55.2298 INFO Get User success!
+2021-06-07 17:45:45.3753 INFO Returned all products from database.
+2021-06-07 17:45:48.5180 INFO Get User success!
+2021-06-07 17:51:21.7665 INFO Returned all products from database.
+2021-06-07 17:51:26.9925 INFO Get User success!
+2021-06-07 17:52:47.1412 INFO Returned all products from database.
+2021-06-07 17:52:49.7846 INFO Get User success!
+2021-06-07 17:58:46.1190 INFO Returned all products from database.
+2021-06-07 17:58:51.2125 INFO Get User success!
+2021-06-07 17:59:02.1800 INFO Get User success!
+2021-06-07 18:03:27.3295 INFO Returned all products from database.
+2021-06-07 18:03:30.6889 INFO Get User success!
+2021-06-07 18:04:48.4452 INFO Returned all products from database.
+2021-06-07 18:04:51.0676 INFO Get User success!
+2021-06-07 18:07:58.6597 INFO Returned all products from database.
+2021-06-07 18:08:13.9082 INFO Returned all products from database.
+2021-06-07 18:08:16.6872 INFO Get User success!
+2021-06-07 18:15:24.3039 INFO Returned all products from database.
+2021-06-07 18:15:27.0520 INFO Get User success!
+2021-06-07 18:16:04.1590 INFO Returned all products from database.
+2021-06-07 18:16:06.4618 INFO Get User success!
+2021-06-07 18:16:11.7817 INFO Returned all categories from database.
+2021-06-07 18:16:13.6852 INFO Returned all catalogs by product id from database.
+2021-06-07 18:19:53.9329 INFO Returned all products from database.
+2021-06-07 18:19:57.4366 INFO Get User success!
+2021-06-07 18:20:03.0152 INFO Get User success!
+2021-06-07 18:20:22.2069 INFO Returned all categories from database.
+2021-06-07 18:20:26.3279 INFO Returned all catalogs by product id from database.
+2021-06-07 18:20:39.0771 INFO Returned all catalogs by product id from database.
+2021-06-07 18:20:51.9424 INFO Returned all catalogs by product id from database.
+2021-06-07 18:20:54.0231 INFO Returned all catalogs by product id from database.
+2021-06-07 18:20:55.4787 INFO Returned all catalogs by product id from database.
+2021-06-07 18:20:58.5093 INFO Get User success!
+2021-06-07 18:21:00.8797 INFO Get User success!
+2021-06-07 18:21:04.7549 INFO Get User success!
+2021-06-07 18:21:07.1677 INFO Get User success!
+2021-06-07 18:21:08.5883 INFO Get User success!
+2021-06-07 18:21:13.1671 INFO Get User success!
+2021-06-07 18:21:14.0653 INFO Get User success!
+2021-06-07 18:21:18.2919 INFO Get User success!
+2021-06-07 18:21:19.3954 INFO Get User success!
+2021-06-07 18:21:39.2868 INFO Get User success!
+2021-06-07 18:21:40.7549 INFO Get User success!
+2021-06-07 18:21:44.9448 INFO Get User success!
+2021-06-07 18:22:03.3733 INFO Returned all products from database.
+2021-06-07 18:22:06.0284 INFO Returned all categories from database.
+2021-06-07 18:22:15.5683 INFO Returned all catalogs by product id from database.
+2021-06-07 18:33:42.5579 INFO Returned all products from database.
+2021-06-07 18:33:42.7869 INFO Returned all products from database.
+2021-06-07 18:33:42.9102 INFO Returned all products from database.
+2021-06-07 18:33:43.7487 INFO Returned all products from database.
+2021-06-07 18:33:44.2450 INFO Returned all products from database.
+2021-06-07 18:33:44.9121 INFO Returned all products from database.
+2021-06-07 18:33:44.9121 INFO Returned all products from database.
+2021-06-07 18:33:44.9121 INFO Returned all products from database.
+2021-06-07 18:33:47.0111 INFO Returned all products from database.
+2021-06-07 18:33:47.2019 INFO Returned all products from database.
+2021-06-07 18:33:47.3783 INFO Returned all products from database.
+2021-06-07 18:33:47.6672 INFO Returned all products from database.
+2021-06-07 18:33:47.7483 INFO Returned all products from database.
+2021-06-07 18:33:48.2999 INFO Returned all products from database.
+2021-06-07 18:33:48.4685 INFO Returned all products from database.
+2021-06-07 18:33:48.9547 INFO Returned all products from database.
+2021-06-07 18:33:48.9760 INFO Returned all products from database.
+2021-06-07 18:33:49.0394 INFO Returned all products from database.
+2021-06-07 18:33:50.4918 INFO Returned all products from database.
+2021-06-07 18:33:50.6905 INFO Returned all products from database.
+2021-06-07 18:33:53.8770 INFO Returned all products from database.
+2021-06-07 18:33:55.2343 INFO Returned all products from database.
+2021-06-07 18:33:55.3896 INFO Returned all products from database.
+2021-06-07 18:33:56.3978 INFO Returned all products from database.
+2021-06-07 18:34:15.8027 INFO Returned all products from database.
+2021-06-07 18:34:15.8554 INFO Returned all products from database.
+2021-06-07 18:34:15.8662 INFO Returned all products from database.
+2021-06-07 18:34:15.8767 INFO Returned all products from database.
+2021-06-07 18:34:17.9191 INFO Returned all products from database.
+2021-06-07 18:34:17.9291 INFO Returned all products from database.
+2021-06-07 18:34:17.9395 INFO Returned all products from database.
+2021-06-07 18:34:17.9395 INFO Returned all products from database.
+2021-06-07 18:34:20.9021 INFO Returned all products from database.
+2021-06-07 18:34:20.9351 INFO Returned all products from database.
+2021-06-07 18:34:20.9351 INFO Returned all products from database.
+2021-06-07 18:34:20.9548 INFO Returned all products from database.
+2021-06-07 18:34:22.5543 INFO Returned all products from database.
+2021-06-07 18:34:22.5768 INFO Returned all products from database.
+2021-06-07 18:34:22.5768 INFO Returned all products from database.
+2021-06-07 18:34:22.5964 INFO Returned all products from database.
+2021-06-07 18:34:23.9234 INFO Returned all catalogs by product id from database.
+2021-06-07 18:34:30.6757 INFO Returned all catalogs by product id from database.
+2021-06-07 18:34:42.3549 INFO Returned all catalogs by product id from database.
+2021-06-07 18:36:01.8115 INFO Get User success!
+2021-06-07 18:37:42.9232 INFO Returned all catalogs by product id from database.
+2021-06-07 18:48:30.5200 INFO Returned all catalogs by product id from database.
+2021-06-07 18:55:41.9314 INFO Returned all products from database.
+2021-06-07 18:55:45.4835 INFO Get User success!
+2021-06-07 18:55:48.2306 INFO Returned all catalogs by product id from database.
+2021-06-07 18:58:11.4644 INFO Returned all catalogs by product id from database.
+2021-06-07 18:59:02.9115 INFO Returned all products from database.
+2021-06-07 19:02:05.9522 INFO Get User success!
+2021-06-07 19:02:11.2364 INFO Returned all categories from database.
+2021-06-07 19:02:17.1217 INFO Returned all catalogs by product id from database.
+2021-06-07 19:05:12.8403 INFO Returned all products from database.
+2021-06-07 19:05:32.1051 INFO Returned all catalogs by product id from database.
+2021-06-07 19:11:58.1753 INFO Returned all products from database.
+2021-06-07 19:12:06.4215 INFO Returned all catalogs by product id from database.
+2021-06-07 19:14:41.6943 INFO Returned all products from database.
+2021-06-07 19:14:48.1738 INFO Returned all catalogs by product id from database.
+2021-06-07 19:16:14.2025 INFO Returned all products from database.
+2021-06-07 19:16:18.2527 INFO Returned all catalogs by product id from database.
+2021-06-07 19:18:31.6816 INFO Returned all products from database.
+2021-06-07 19:18:37.8864 INFO Returned all catalogs by product id from database.
+2021-06-07 19:19:49.6641 INFO Returned all products from database.
+2021-06-07 19:20:00.1738 INFO Returned all catalogs by product id from database.
+2021-06-07 19:23:39.9087 INFO Returned all products from database.
+2021-06-07 19:23:52.3579 INFO Returned all catalogs by product id from database.
+2021-06-07 19:24:45.5364 INFO Returned all products from database.
+2021-06-07 19:24:51.1878 INFO Returned all catalogs by product id from database.
+2021-06-07 19:44:32.8159 INFO Returned all products from database.
+2021-06-07 19:44:35.5951 INFO Get User success!
+2021-06-07 19:44:40.7722 INFO Returned all categories from database.
+2021-06-07 19:44:43.6668 INFO Returned all catalogs by product id from database.
+2021-06-07 19:45:00.5954 INFO Returned all catalogs by product id from database.
+2021-06-07 19:48:32.3306 INFO Returned all products from database.
+2021-06-07 20:09:43.5061 INFO Testing Parser Controller
+2021-06-07 20:21:51.8020 INFO Testing Parser Controller
+2021-06-07 20:24:40.1078 INFO Testing Parser Controller
+2021-06-07 20:33:21.7412 INFO Testing Parser Controller
+2021-06-07 20:36:26.7496 INFO Testing Parser Controller
+2021-06-07 20:50:43.9270 INFO Returned all categories from database.
+2021-06-07 20:50:53.9487 INFO Returned all products from database.
+2021-06-07 20:50:54.0764 INFO Returned all products from database.
+2021-06-07 20:50:55.3187 INFO Returned all products from database.
+2021-06-07 20:50:55.4511 INFO Returned all products from database.
+2021-06-07 20:50:56.2361 INFO Returned all products from database.
+2021-06-07 20:50:56.2914 INFO Returned all products from database.
+2021-06-07 20:50:57.0630 INFO Returned all products from database.
+2021-06-07 20:50:57.2041 INFO Returned all products from database.
+2021-06-07 20:51:03.2488 INFO Returned all products from database.
+2021-06-07 20:51:04.7502 INFO Returned all products from database.
+2021-06-07 20:51:16.8184 INFO Returned all catalogs by product id from database.
+2021-06-07 20:51:54.9624 INFO Returned all catalogs by product id from database.
+2021-06-07 20:52:27.1311 INFO Returned all catalogs by product id from database.
+2021-06-07 20:52:30.6396 INFO Returned all catalogs by product id from database.
+2021-06-07 20:55:47.8555 INFO Returned all products from database.
+2021-06-07 20:55:51.4189 INFO Get User success!
+2021-06-07 20:57:30.1460 INFO Returned all catalogs by product id from database.
+2021-06-07 20:57:54.6826 INFO Returned all categories from database.
+2021-06-07 20:57:56.7615 INFO Returned all catalogs by product id from database.
+2021-06-07 20:58:18.1526 INFO Get User success!
+2021-06-07 20:58:30.0333 INFO Returned all products from database.
+2021-06-07 20:58:31.4641 INFO Returned all products from database.
+2021-06-07 22:01:50.4999 INFO Get User success!

@@ -20,7 +20,7 @@ namespace Repository
         private readonly IConfiguration _configuration;
 
         private User _user;
-
+      
         public AuthenticateManager(UserManager<User> userManager, IConfiguration configuration)
         {
             _userManager = userManager;
@@ -110,5 +110,28 @@ namespace Repository
             }
             return false;
         }
+
+        public async Task<bool> UpdateUser(UserDto userDto)
+        {
+            try
+            {
+                _user = _userManager.Users.Where(u => u.Email == userDto.Email).FirstOrDefault();
+
+                _user.FirstName = userDto.FirstName;
+                _user.UserName = userDto.UserName;
+                _user.LastName = userDto.LastName;
+                _user.Birthday = userDto.Birthday;
+                _user.PhoneNumber = userDto.PhoneNumber;
+
+                await _userManager.UpdateAsync(_user);
+
+                return true;
+            }
+           
+            catch(Exception ex)
+            {
+                return false;
+            }
+        } 
     }
 }

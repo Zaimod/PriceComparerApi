@@ -22,6 +22,10 @@ namespace Repository
                 .OrderBy(c => c.Name)
                 .ToListAsync();
 
+        public async Task<IEnumerable<Catalog>> GetCatalogByProductId(int id) => await FindByCondition(c => c.productId == id)
+            .OrderBy(c => c.Name)
+            .ToListAsync();
+
         public IEnumerable<Catalog> GetByIds(IEnumerable<int> ids)
         {
             return FindByCondition(x => ids.Contains(x.id))
@@ -34,10 +38,18 @@ namespace Repository
                 .FirstOrDefault();
         }
 
-        public Catalog GetItemOfCatalogByName(string name)
+        public Catalog GetItemOfCatalogByName(string name, int storeId)
         {
-            return FindByCondition(c => c.Name.Equals(name))
-                .FirstOrDefault();
+            Catalog result = FindByCondition(c => c.Name.Equals(name)).FirstOrDefault();
+
+            if (result != null)
+            {
+                if (result.storeId != storeId)
+                    return null;
+                else
+                    return result;
+            }
+            return result;
         }
 
         public void CreateCatalog(Catalog parts)

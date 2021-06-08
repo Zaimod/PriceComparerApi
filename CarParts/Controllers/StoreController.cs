@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace CarParts.Controllers
 {
+
     [Route("api/store")]
     [ApiController]
     public class StoreController : ControllerBase
@@ -21,6 +22,12 @@ namespace CarParts.Controllers
         private IRepositoryManager _repository;
         private IMapper _mapper;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StoreController"/> class.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
+        /// <param name="repository">The repository.</param>
+        /// <param name="mapper">The mapper.</param>
         public StoreController(ILoggerManager logger, IRepositoryManager repository, IMapper mapper)
         {
             _logger = logger;
@@ -28,6 +35,10 @@ namespace CarParts.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Gets all owners.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet(Name = "GetAllStories"), Authorize(Roles = "Manager")]
         public async Task<IActionResult> GetAllOwners()
         {
@@ -40,6 +51,11 @@ namespace CarParts.Controllers
             return Ok(carsResult);
         }
 
+        /// <summary>
+        /// Gets the store by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         [HttpGet("{id}", Name = "StoreById")]
         public async Task<IActionResult> GetStoreById(int id)
         {
@@ -56,6 +72,11 @@ namespace CarParts.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates the store.
+        /// </summary>
+        /// <param name="car">The car.</param>
+        /// <returns></returns>
         [HttpPost(Name = "CreateStore")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateStore([FromBody]StoreForCreationDto car)

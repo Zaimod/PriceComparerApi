@@ -1,0 +1,128 @@
+2021-06-06 17:59:20.1182 INFO Returned all products from database.
+2021-06-06 17:59:20.1182 INFO Returned all products from database.
+2021-06-06 17:59:20.1182 INFO Returned all products from database.
+2021-06-06 18:01:22.9285 INFO Returned all products from database.
+2021-06-06 18:20:55.6992 INFO Returned all products from database.
+2021-06-06 18:32:31.3757 INFO Returned all categories from database.
+2021-06-06 18:33:16.7718 INFO Returned all products from database.
+2021-06-06 18:35:18.0221 INFO Returned all products from database.
+2021-06-06 18:43:33.0493 INFO Returned all products from database.
+2021-06-06 19:19:41.8502 INFO Returned all products from database.
+2021-06-06 19:20:17.9686 INFO Returned all products from database.
+2021-06-06 19:20:40.8506 INFO Returned all products from database.
+2021-06-06 19:20:46.6583 INFO Returned all products from database.
+2021-06-06 19:20:48.8557 INFO Returned all categories from database.
+2021-06-06 19:22:42.3634 INFO Returned all catalogs from database.
+2021-06-06 19:22:48.3941 INFO Returned all catalogs by product id from database.
+2021-06-06 19:32:40.8514 INFO Returned all products from database.
+2021-06-06 19:32:43.5592 INFO Returned all categories from database.
+2021-06-06 19:33:25.1134 INFO Returned all products from database.
+2021-06-06 19:43:45.8945 INFO Returned all products from database.
+2021-06-06 19:44:05.1490 INFO Returned all categories from database.
+2021-06-06 19:44:13.2940 INFO Returned all catalogs by product id from database.
+2021-06-06 19:44:20.8340 INFO Returned all catalogs by product id from database.
+2021-06-06 19:44:24.1370 INFO Returned all catalogs by product id from database.
+2021-06-06 19:44:29.0723 INFO Returned all catalogs by product id from database.
+2021-06-06 19:53:37.3438 ERROR Object sent from client is null. Controller: Authentication, action: GetCurrentUserId
+2021-06-06 19:57:12.1746 ERROR Object sent from client is null. Controller: Authentication, action: GetCurrentUserId
+2021-06-06 19:57:21.5305 ERROR Object sent from client is null. Controller: Authentication, action: GetCurrentUserId
+2021-06-06 19:57:22.3448 ERROR Object sent from client is null. Controller: Authentication, action: GetCurrentUserId
+2021-06-06 19:58:10.9781 ERROR Object sent from client is null. Controller: Authentication, action: GetCurrentUserId
+2021-06-06 20:01:30.0990 ERROR Object sent from client is null. Controller: Authentication, action: GetCurrentUserId
+2021-06-06 20:01:39.3376 ERROR Object sent from client is null. Controller: Authentication, action: GetCurrentUserId
+2021-06-06 20:02:13.0618 ERROR Object sent from client is null. Controller: Authentication, action: GetCurrentUserId
+2021-06-06 20:02:50.9121 ERROR Object sent from client is null. Controller: Authentication, action: GetCurrentUserId
+2021-06-06 20:03:12.5581 ERROR Object sent from client is null. Controller: Authentication, action: GetCurrentUserId
+2021-06-06 20:03:13.9012 ERROR Object sent from client is null. Controller: Authentication, action: GetCurrentUserId
+2021-06-06 20:03:14.8056 ERROR Object sent from client is null. Controller: Authentication, action: GetCurrentUserId
+2021-06-06 20:03:46.1919 ERROR Object sent from client is null. Controller: Authentication, action: GetCurrentUserId
+2021-06-06 20:04:07.2348 ERROR Object sent from client is null. Controller: Authentication, action: GetCurrentUserId
+2021-06-06 20:05:26.0351 ERROR Object sent from client is null. Controller: Authentication, action: GetUser
+2021-06-06 20:13:30.0654 ERROR Something went wrong: AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> IEnumerable`1
+System.Object -> System.Collections.Generic.IEnumerable`1[[Entities.DataTransferObjects.UserDto, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method165(Closure , Object , IEnumerable`1 , ResolutionContext )
+   at CarParts.Controllers.AuthenticationController.GetUser(String userName) in D:\WorkSpace\CarPartsAPI\CarParts\Controllers\AuthenticationController.cs:line 149
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-06-06 20:22:01.2206 ERROR Something went wrong: AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> IEnumerable`1
+System.Object -> System.Collections.Generic.IEnumerable`1[[Entities.DataTransferObjects.UserDto, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method165(Closure , Object , IEnumerable`1 , ResolutionContext )
+   at CarParts.Controllers.AuthenticationController.GetUser(String userName) in D:\WorkSpace\CarPartsAPI\CarParts\Controllers\AuthenticationController.cs:line 149
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-06-06 20:33:25.2968 ERROR Something went wrong: System.InvalidOperationException: Synchronous operations are disallowed. Call WriteAsync or set AllowSynchronousIO to true instead.
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpResponseStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.Server.IIS.Core.WrappingStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.WebUtilities.HttpResponseStreamWriter.FlushInternal(Boolean flushEncoder)
+   at Microsoft.AspNetCore.WebUtilities.HttpResponseStreamWriter.Dispose(Boolean disposing)
+   at System.IO.TextWriter.Close()
+   at Newtonsoft.Json.JsonTextWriter.CloseBufferAndWriter()
+   at Newtonsoft.Json.JsonTextWriter.Close()
+   at Newtonsoft.Json.JsonWriter.Dispose(Boolean disposing)
+   at Newtonsoft.Json.JsonWriter.System.IDisposable.Dispose()
+   at EasyData.AspNetCore.EasyDataApiHandler.WriteJsonResponseAsync(HttpContext context, String result, Func`3 writeContentAction, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataApiHandler.WriteErrorJsonResponseAsync(HttpContext context, String errorMessage, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataApiHandler.HandleExceptionAsync(Exception ex, CancellationToken ct)
+   at EasyData.AspNetCore.EasyDataMiddleware`1.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2021-06-06 20:33:46.9410 WARN Get User failed.
+2021-06-06 20:33:49.5408 WARN Get User failed.
+2021-06-06 20:37:00.2286 WARN Get User failed.
+2021-06-06 20:37:03.6978 INFO Get User success!.
+2021-06-06 20:37:06.0649 WARN Get User failed.
+2021-06-06 20:37:08.3603 INFO Get User success!.
+2021-06-06 21:35:28.5929 INFO Returned all products from database.
+2021-06-06 21:35:37.5843 INFO Returned all categories from database.
+2021-06-06 21:50:29.7856 INFO Returned all products from database.
+2021-06-06 21:50:37.7187 WARN Get User failed.
+2021-06-06 21:51:38.9511 INFO Returned all products from database.
+2021-06-06 21:51:58.2265 WARN Get User failed.
+2021-06-06 21:55:45.5312 INFO Get User success!
+2021-06-06 21:59:43.7041 INFO Returned all products from database.
+2021-06-06 21:59:49.3836 INFO Returned all categories from database.
+2021-06-06 21:59:55.5602 INFO Get User success!
+2021-06-06 22:00:08.4207 WARN Get User failed.
+2021-06-06 22:00:09.5170 WARN Get User failed.
+2021-06-06 22:00:14.5428 WARN Get User failed.
+2021-06-06 22:00:14.9148 INFO Get User success!
+2021-06-06 22:01:18.1340 INFO Returned all products from database.
+2021-06-06 22:01:23.6982 INFO Get User success!

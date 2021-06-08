@@ -10,9 +10,10 @@ namespace Contracts
     public interface ICatalogRepository: IRepositoryBase<Catalog>
     {
         Task<IEnumerable<Catalog>> GetCatalog();
+        Task<IEnumerable<Catalog>> GetCatalogByProductId(int id);
         Task<IEnumerable<Catalog>> GetCatalogBySearch(string searchName);
         Catalog GetItemOfCatalogById(int Id);
-        Catalog GetItemOfCatalogByName(string name);
+        Catalog GetItemOfCatalogByName(string name, int storeId);
         IEnumerable<Catalog> GetByIds(IEnumerable<int> ids);
         void CreateCatalog(Catalog catalog);
 

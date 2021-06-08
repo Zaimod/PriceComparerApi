@@ -14,5 +14,6 @@ namespace Contracts
         Task<bool> ConfirmEmail(string userName);
         Task<string> CreateToken();
         Task<string> GetEmailByUserName(string userName);
+        Task<bool> UpdateUser(UserDto user);
      }
 }

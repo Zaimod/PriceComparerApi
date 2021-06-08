@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarParts.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20210602125208_addRelationship")]
-    partial class addRelationship
+    [Migration("20210605132328_addNewFieldsToUser")]
+    partial class addNewFieldsToUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -78,6 +78,9 @@ namespace CarParts.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("UrlImage")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.HasKey("Id");
 
                     b.ToTable("Category");
@@ -139,6 +142,12 @@ namespace CarParts.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("Birthday")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("City")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -180,6 +189,9 @@ namespace CarParts.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("SecurityStamp")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Sex")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -229,22 +241,22 @@ namespace CarParts.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ba1f15a4-cfe0-46b1-9dfe-ff288da568e2",
-                            ConcurrencyStamp = "48d73ab7-48c4-422e-b3cb-45137881b973",
+                            Id = "99e0d328-9b40-468b-81ea-0ee63e28a0b7",
+                            ConcurrencyStamp = "47a3c75b-d321-4619-98b9-0f4451016681",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
-                            Id = "165b186d-1ded-487d-bb21-3bb4f5a083a4",
-                            ConcurrencyStamp = "45a7936a-cd06-4451-b87f-9813e5da0f1f",
+                            Id = "2eff913a-226a-4583-a0e1-7c2a0150895c",
+                            ConcurrencyStamp = "4b7295eb-f564-41cd-b180-b21270ae1dca",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "761fdc82-b653-4427-ba02-6b6c62cffc8b",
-                            ConcurrencyStamp = "6d967c1d-cfce-4a42-aca8-caaa62228bbd",
+                            Id = "5efb9d41-e820-415e-98d1-b7f50559767c",
+                            ConcurrencyStamp = "ebdd9fbc-5875-487b-944d-d66844d7a634",
                             Name = "User",
                             NormalizedName = "USER"
                         });

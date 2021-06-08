@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 
 namespace CarParts.Controllers
 {
+
     [Route("api/authentication")]
     [ApiController]
     public class AuthenticationController : ControllerBase
@@ -24,6 +25,15 @@ namespace CarParts.Controllers
         private readonly UserManager<User> _userManager;
         private readonly IAuthenticationManager _authManager;
         private IMemoryCache _cache;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuthenticationController"/> class.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
+        /// <param name="mapper">The mapper.</param>
+        /// <param name="userManager">The user manager.</param>
+        /// <param name="authManager">The authentication manager.</param>
+        /// <param name="cache">The cache.</param>
         public AuthenticationController(ILoggerManager logger, IMapper mapper, UserManager<User> userManager, IAuthenticationManager authManager,
             IMemoryCache cache)
         {
@@ -34,6 +44,11 @@ namespace CarParts.Controllers
             _cache = cache;
         }
 
+        /// <summary>
+        /// Registers the user.
+        /// </summary>
+        /// <param name="userForRegistration">The user for registration.</param>
+        /// <returns></returns>
         [HttpPost]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> RegisterUser([FromBody] UserForRegistrationDto userForRegistration)
@@ -59,6 +74,11 @@ namespace CarParts.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Authenticates the specified user.
+        /// </summary>
+        /// <param name="user">The user.</param>
+        /// <returns></returns>
         [HttpPost("login")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> Authenticate([FromBody] UserForAuthenticationDto user)
@@ -73,6 +93,11 @@ namespace CarParts.Controllers
             return Ok(new { Token = await _authManager.CreateToken(), emailConfirmed =  await _authManager.IsEmailConfirmed(user.UserName) });
         }
 
+        /// <summary>
+        /// Sends the verification code.
+        /// </summary>
+        /// <param name="dto">The dto.</param>
+        /// <returns></returns>
         [HttpPost("sendVerificationCode")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> SendVerificationCode([FromBody] SendVerificationCodeDto dto)
@@ -89,7 +114,12 @@ namespace CarParts.Controllers
             
             return Ok();
         }
-        
+
+        /// <summary>
+        /// Changes the email confirmed.
+        /// </summary>
+        /// <param name="dto">The dto.</param>
+        /// <returns></returns>
         [HttpPost("changeEmailConfirmed")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> ChangeEmailConfirmed([FromBody] ChangeEmailConfirmedDto dto)
@@ -108,6 +138,50 @@ namespace CarParts.Controllers
             }
 
             return BadRequest();
+        }
+
+        [HttpGet("username/{id}", Name = "getUser")]
+        public async Task<IActionResult> GetUser(string id)
+        {
+            try
+            {
+                var user = _userManager.Users.Where(u => u.UserName == id).FirstOrDefault();
+
+                UserDto userResult = new UserDto
+                {
+                    UserName = user.UserName,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Email = user.Email,
+                    Birthday = user.Birthday,
+                    Sex = user.Sex,
+                    City = user.City,
+                    PhoneNumber = user.PhoneNumber
+                };
+                _logger.LogInfo($"Get User success!");
+                return Ok(userResult);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarn($"Get User failed.");
+                return BadRequest();
+            }
+        }
+
+        [HttpPost("userUpdate")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> UserUpdate([FromBody] UserDto dto)
+        {
+            try
+            {
+                await _authManager.UpdateUser(dto);
+
+                return Ok();
+            }
+            catch(Exception)
+            {
+                return BadRequest();
+            }
         }
     }
 }
