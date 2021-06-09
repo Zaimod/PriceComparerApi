@@ -9,6 +9,12 @@ namespace PriceComparer.Services
 {
     public class EmailService
     {
+        /// <summary>
+        /// Sends the email asynchronous.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <param name="subject">The subject.</param>
+        /// <param name="message">The message.</param>
         public async Task SendEmailAsync(string email, string subject, string message)
         {
             var emailMessage = new MimeMessage();
@@ -31,6 +37,10 @@ namespace PriceComparer.Services
             }
         }
 
+        /// <summary>
+        /// Generates the code.
+        /// </summary>
+        /// <returns></returns>
         public string GenerateCode()
         {
             Random generator = new Random();

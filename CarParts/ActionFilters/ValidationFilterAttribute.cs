@@ -12,11 +12,19 @@ namespace CarParts.ActionFilters
     {
         private readonly ILoggerManager _logger;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidationFilterAttribute"/> class.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
         public ValidationFilterAttribute(ILoggerManager logger)
         {
             _logger = logger;
         }
 
+        /// <summary>
+        /// Called before the action executes, after model binding is complete.
+        /// </summary>
+        /// <param name="context">The <see cref="T:Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext" />.</param>
         public void OnActionExecuting(ActionExecutingContext context)
         {
             var action = context.RouteData.Values["action"];
@@ -40,6 +48,10 @@ namespace CarParts.ActionFilters
             }
         }
 
+        /// <summary>
+        /// Called after the action executes, before the action result.
+        /// </summary>
+        /// <param name="context">The <see cref="T:Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext" />.</param>
         public void OnActionExecuted(ActionExecutedContext context)
         {
         }    

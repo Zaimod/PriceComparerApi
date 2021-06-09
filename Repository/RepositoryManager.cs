@@ -15,6 +15,7 @@ namespace Repository
         private ICatalogRepository _catalog;
         private ICategoryRepository _category;
         private IProductRepository _product;
+
         public IStoreRepository store
         {
             get
@@ -65,11 +66,19 @@ namespace Repository
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryManager"/> class.
+        /// </summary>
+        /// <param name="repositoryContext">The repository context.</param>
         public RepositoryManager(RepositoryContext repositoryContext)
         {
             _repoContext = repositoryContext;
         }
 
+        /// <summary>
+        /// Saves the asynchronous.
+        /// </summary>
+        /// <returns></returns>
         public Task SaveAsync() => _repoContext.SaveChangesAsync();
     }
 }

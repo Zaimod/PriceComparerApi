@@ -18,6 +18,13 @@ namespace ParserApplication.Parsers.Comfy
         int categoryId { get; set; }
         int productId { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetComponentsComfy"/> class.
+        /// </summary>
+        /// <param name="storeId">The store identifier.</param>
+        /// <param name="categoryId">The category identifier.</param>
+        /// <param name="productId">The product identifier.</param>
+        /// <param name="repository">The repository.</param>
         public GetComponentsComfy(int storeId, int categoryId, int productId, IRepositoryManager repository)
         {
             this.storeId = storeId;
@@ -26,6 +33,10 @@ namespace ParserApplication.Parsers.Comfy
             _repository = repository;
         }
 
+        /// <summary>
+        /// Creates the specified item.
+        /// </summary>
+        /// <param name="item">The item.</param>
         async public Task Create(HtmlNode item)
         {
             dto = new CatalogForCreationDto();
@@ -44,6 +55,11 @@ namespace ParserApplication.Parsers.Comfy
 
         }
 
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns></returns>
         async public Task<string> GetName(HtmlNode item)
         {
             string text = item.Descendants("a")
@@ -54,6 +70,11 @@ namespace ParserApplication.Parsers.Comfy
             return text;
         }
 
+        /// <summary>
+        /// Gets the new price.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns></returns>
         async public Task<double> GetNewPrice(HtmlNode item)
         {
             string text = "";
@@ -71,6 +92,11 @@ namespace ParserApplication.Parsers.Comfy
             return Convert.ToDouble(text);
         }
 
+        /// <summary>
+        /// Gets the price.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns></returns>
         async public Task<double> GetPrice(HtmlNode item)
         {
             string text = "";
@@ -103,6 +129,11 @@ namespace ParserApplication.Parsers.Comfy
             return Convert.ToDouble(text);
         }
 
+        /// <summary>
+        /// Gets the URL.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns></returns>
         async public Task<string> GetUrl(HtmlNode item)
         {
             string url = item.Descendants("a")
@@ -113,6 +144,13 @@ namespace ParserApplication.Parsers.Comfy
             return url;
         }
 
+        /// <summary>
+        /// Determines whether [is free delivery] [the specified item].
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns>
+        ///   <c>true</c> if [is free delivery] [the specified item]; otherwise, <c>false</c>.
+        /// </returns>
         async public Task<bool> IsFreeDelivery(HtmlNode item)
         {
             if (item.Descendants("img").Where(node => node.GetAttributeValue("alt", null).Contains("Доставка за 1 гривню")).FirstOrDefault() == null)
@@ -121,6 +159,13 @@ namespace ParserApplication.Parsers.Comfy
             return true;
         }
 
+        /// <summary>
+        /// Determines whether the specified item is discount.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified item is discount; otherwise, <c>false</c>.
+        /// </returns>
         async public Task<bool> IsDiscount(HtmlNode item)
         {
             if (dto.NewPrice.Equals(dto.Price))
@@ -129,6 +174,11 @@ namespace ParserApplication.Parsers.Comfy
             return true;
         }
 
+        /// <summary>
+        /// Checks the name for product.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns></returns>
         async public Task<bool> CheckNameForProduct(HtmlNode item)
         {
             string name = await GetName(item);
@@ -153,6 +203,11 @@ namespace ParserApplication.Parsers.Comfy
 
         }
 
+        /// <summary>
+        /// Checks the is avaibility.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns></returns>
         async public Task<bool> CheckIsAvaibility(HtmlNode item)
         {
             if (item.Descendants("span").Where(node => node.GetAttributeValue("class", "").Equals("product-item__informer product-popup__link product-popup__link_bold js-informer ")).FirstOrDefault() == null)
@@ -161,6 +216,10 @@ namespace ParserApplication.Parsers.Comfy
             return false;
         }
 
+        /// <summary>
+        /// Gets the dto.
+        /// </summary>
+        /// <returns></returns>
         async public Task<CatalogForCreationDto> GetDto()
         {
             return dto;

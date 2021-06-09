@@ -6,6 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\SessionController.cs" />
+    <Compile Remove="Migrations\20210604152654_addUrlImage.cs" />
+    <Compile Remove="Migrations\20210604152654_addUrlImage.Designer.cs" />
+    <Compile Remove="Migrations\20210605132328_addNewFieldsToUser.cs" />
+    <Compile Remove="Migrations\20210605132328_addNewFieldsToUser.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="EasyData.AspNetCore" Version="1.2.6" />
     <PackageReference Include="EasyData.EntityFrameworkCore.Relational" Version="1.2.6" />

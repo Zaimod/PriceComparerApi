@@ -13,6 +13,11 @@ namespace CarParts.Extensions
 {
     public static class ExceptionMiddlewareExtensions
     {
+        /// <summary>
+        /// Configures the exception handler.
+        /// </summary>
+        /// <param name="app">The application.</param>
+        /// <param name="logger">The logger.</param>
         public static void ConfigureExceptionHandler(this IApplicationBuilder app, ILoggerManager logger)
         {
             app.UseExceptionHandler(appError =>

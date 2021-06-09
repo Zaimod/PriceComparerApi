@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities.DataTransferObjects
 {
+
     public class CatalogDto
     {
         public int id { get; set; }

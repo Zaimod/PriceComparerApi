@@ -24,6 +24,12 @@ namespace CarParts.Controllers.Parser
         private IParser _parser;
         private IEnumerable<CatalogForCreationDto> dto;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParserController"/> class.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
+        /// <param name="repository">The repository.</param>
+        /// <param name="mapper">The mapper.</param>
         public ParserController(ILoggerManager logger, IRepositoryManager repository, IMapper mapper)
         {
             _logger = logger;

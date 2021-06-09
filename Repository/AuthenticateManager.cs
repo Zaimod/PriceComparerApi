@@ -20,12 +20,23 @@ namespace Repository
         private readonly IConfiguration _configuration;
 
         private User _user;
-      
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuthenticateManager"/> class.
+        /// </summary>
+        /// <param name="userManager">The user manager.</param>
+        /// <param name="configuration">The configuration.</param>
         public AuthenticateManager(UserManager<User> userManager, IConfiguration configuration)
         {
             _userManager = userManager;
             _configuration = configuration;
         }
+
+        /// <summary>
+        /// Validates the user.
+        /// </summary>
+        /// <param name="userForAuth">The user for authentication.</param>
+        /// <returns></returns>
         public async Task<bool> ValidateUser(UserForAuthenticationDto userForAuth)
         {
             _user = await _userManager.FindByNameAsync(userForAuth.UserName);
@@ -33,6 +44,10 @@ namespace Repository
             return (_user != null && await _userManager.CheckPasswordAsync(_user, userForAuth.Password));
         }
 
+        /// <summary>
+        /// Creates the token.
+        /// </summary>
+        /// <returns></returns>
         public async Task<string> CreateToken()
         {
             var signingCredentials = GetSigningCredentials();
@@ -42,6 +57,12 @@ namespace Repository
             return new JwtSecurityTokenHandler().WriteToken(tokenOptions);
         }
 
+        /// <summary>
+        /// Generates the token options.
+        /// </summary>
+        /// <param name="signingCredentials">The signing credentials.</param>
+        /// <param name="claims">The claims.</param>
+        /// <returns></returns>
         private JwtSecurityToken GenerateTokenOptions(SigningCredentials signingCredentials, List<Claim> claims)
         {
             var jwtSettings = _configuration.GetSection("JwtSettings");
@@ -58,6 +79,10 @@ namespace Repository
             return tokenOptions;
         }
 
+        /// <summary>
+        /// Gets the claims.
+        /// </summary>
+        /// <returns></returns>
         private async Task<List<Claim>> GetClaims()
         {
             var claims = new List<Claim>
@@ -74,6 +99,10 @@ namespace Repository
             return claims;
         }
 
+        /// <summary>
+        /// Gets the signing credentials.
+        /// </summary>
+        /// <returns></returns>
         private SigningCredentials GetSigningCredentials()
         {
             var key = Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("SECRET"));
@@ -82,6 +111,11 @@ namespace Repository
             return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256);
         }
 
+        /// <summary>
+        /// Determines whether [is email confirmed] [the specified user name].
+        /// </summary>
+        /// <param name="userName">Name of the user.</param>
+        /// <returns></returns>
         public async Task<bool> IsEmailConfirmed(string userName)
         {
             _user = await _userManager.FindByNameAsync(userName);
@@ -89,6 +123,11 @@ namespace Repository
             return (_user != null && await _userManager.IsEmailConfirmedAsync(_user));
         }
 
+        /// <summary>
+        /// Gets the name of the email by user.
+        /// </summary>
+        /// <param name="userName">Name of the user.</param>
+        /// <returns></returns>
         public async Task<string> GetEmailByUserName(string userName)
         {
             _user = await _userManager.FindByNameAsync(userName);
@@ -99,6 +138,11 @@ namespace Repository
             return null;
         }
 
+        /// <summary>
+        /// Confirms the email.
+        /// </summary>
+        /// <param name="userName">Name of the user.</param>
+        /// <returns></returns>
         public async Task<bool> ConfirmEmail(string userName)
         {
             _user = await _userManager.FindByNameAsync(userName);
@@ -111,6 +155,11 @@ namespace Repository
             return false;
         }
 
+        /// <summary>
+        /// Updates the user.
+        /// </summary>
+        /// <param name="userDto">The user dto.</param>
+        /// <returns></returns>
         public async Task<bool> UpdateUser(UserDto userDto)
         {
             try

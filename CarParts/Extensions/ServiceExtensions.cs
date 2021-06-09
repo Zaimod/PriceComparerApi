@@ -20,7 +20,11 @@ namespace CarParts.Extensions
 {
     public static class ServiceExtensions
     {
-        public static void ConfigureCors(this IServiceCollection services) => 
+        /// <summary>
+        /// Configures the cors.
+        /// </summary>
+        /// <param name="services">The services.</param>
+        public static void ConfigureCORS(this IServiceCollection services) => 
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", builder =>
@@ -29,7 +33,11 @@ namespace CarParts.Extensions
                 .AllowAnyHeader());
             });
 
-        public static void ConfigureIISIntegration(this IServiceCollection services)
+        /// <summary>
+        /// Configures the IIS integration.
+        /// </summary>
+        /// <param name="services">The services.</param>
+        public static void ConfigureIIS(this IServiceCollection services)
         {
             services.Configure<IISOptions>(options =>
             {
@@ -37,22 +45,41 @@ namespace CarParts.Extensions
             });
         }
 
+        /// <summary>
+        /// Configures the logger service.
+        /// </summary>
+        /// <param name="services">The services.</param>
         public static void ConfigureLoggerService(this IServiceCollection services)
         {
             services.AddSingleton<ILoggerManager, LoggerManager>();
         }
 
+        /// <summary>
+        /// Configures my SQL context.
+        /// </summary>
+        /// <param name="services">The services.</param>
+        /// <param name="config">The configuration.</param>
         public static void ConfigureMySqlContext(this IServiceCollection services, IConfiguration config)
         {
             var connectionString = config["mysqlconnection:connectionString"];
-            services.AddDbContext<RepositoryContext>(o => o.UseMySql(connectionString, MySqlServerVersion.LatestSupportedServerVersion, b => b.MigrationsAssembly("PriceComparer")));
+            services.AddDbContext<RepositoryContext>(o => o.UseMySql(connectionString, 
+                MySqlServerVersion.LatestSupportedServerVersion, 
+                b => b.MigrationsAssembly("PriceComparer")));
         }
 
-        public static void ConfigureRepositoryWrapper(this IServiceCollection services)
+        /// <summary>
+        /// Configures the repository.
+        /// </summary>
+        /// <param name="services">The services.</param>
+        public static void ConfigureRepository(this IServiceCollection services)
         {
             services.AddScoped<IRepositoryManager, RepositoryManager>();
         }
 
+        /// <summary>
+        /// Configures the identity.
+        /// </summary>
+        /// <param name="services">The services.</param>
         public static void ConfigureIdentity(this IServiceCollection services)
         {
             var builder = services.AddIdentityCore<User>(s =>
@@ -70,7 +97,12 @@ namespace CarParts.Extensions
             builder.AddEntityFrameworkStores<RepositoryContext>().AddDefaultTokenProviders();
         }
 
-        public static void ConfigureJWT(this IServiceCollection services, IConfiguration configuration)
+        /// <summary>
+        /// Configures the JWT token.
+        /// </summary>
+        /// <param name="services">The services.</param>
+        /// <param name="configuration">The configuration.</param>
+        public static void ConfigureJWTToken(this IServiceCollection services, IConfiguration configuration)
         {
             var jwtSettings = configuration.GetSection("JwtSettings");
             var secretKey = Environment.GetEnvironmentVariable("SECRET");

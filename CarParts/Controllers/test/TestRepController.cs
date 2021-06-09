@@ -13,18 +13,26 @@ namespace CarParts.Controllers.test
     {
         private readonly IRepositoryManager _repository;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="testRepController"/> class.
+        /// </summary>
+        /// <param name="repository">The repository.</param>
         public testRepController(IRepositoryManager repository)
         {
             _repository = repository;
         }
 
+        /// <summary>
+        /// Gets this instance.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<string> Get()
         {
             _repository.catalog.FindAll();
             _repository.store.FindAll();
 
-            return new string[] { "value1", "value2" };
+            return new string[] { "test1", "test2" };
         }
     }
 }

@@ -13,20 +13,28 @@ namespace CarParts.Controllers
     {
         private ILoggerManager _logger;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestNlogController"/> class.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
         public TestNlogController(ILoggerManager logger)
         {
             _logger = logger;
         }
 
+        /// <summary>
+        /// Gets this instance.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            _logger.LogInfo("Here is info message from our values controller."); 
-            _logger.LogDebug("Here is debug message from our values controller."); 
-            _logger.LogWarn("Here is warn message from our values controller.");
-            _logger.LogError("Here is an error message from our values controller.");
+            _logger.LogInfo("Here is info."); 
+            _logger.LogDebug("Here is debug."); 
+            _logger.LogWarn("Here is warn.");
+            _logger.LogError("Here is an error.");
 
-            return new string[] { "value1", "value2" };
+            return new string[] { "test1", "test2" };
         }
 
 

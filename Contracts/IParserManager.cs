@@ -8,6 +8,11 @@ namespace Contracts
 {
     public interface IParserManager
     {
+        /// <summary>
+        /// Checks the price.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <returns></returns>
         Task<bool> CheckPrice(string url);
     }
 }

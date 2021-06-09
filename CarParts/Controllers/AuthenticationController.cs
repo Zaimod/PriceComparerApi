@@ -140,6 +140,11 @@ namespace CarParts.Controllers
             return BadRequest();
         }
 
+        /// <summary>
+        /// Gets the user.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         [HttpGet("username/{id}", Name = "getUser")]
         public async Task<IActionResult> GetUser(string id)
         {
@@ -168,6 +173,11 @@ namespace CarParts.Controllers
             }
         }
 
+        /// <summary>
+        /// Users the update.
+        /// </summary>
+        /// <param name="dto">The dto.</param>
+        /// <returns></returns>
         [HttpPost("userUpdate")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UserUpdate([FromBody] UserDto dto)

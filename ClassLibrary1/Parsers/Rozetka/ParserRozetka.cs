@@ -21,6 +21,13 @@ namespace ParserApplication.Parsers.Rozetka
         CatalogForCreationDto dto;
         GetComponentsRozetka componentsRozetka;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParserRozetka"/> class.
+        /// </summary>
+        /// <param name="storeId">The store identifier.</param>
+        /// <param name="categoryId">The category identifier.</param>
+        /// <param name="productId">The product identifier.</param>
+        /// <param name="repository">The repository.</param>
         public ParserRozetka(int storeId, int categoryId, int productId, IRepositoryManager repository)
         {
             dtos = new List<CatalogForCreationDto>();
@@ -29,6 +36,11 @@ namespace ParserApplication.Parsers.Rozetka
             
         }
 
+        /// <summary>
+        /// Runs the specified search query.
+        /// </summary>
+        /// <param name="searchQuery">The search query.</param>
+        /// <returns></returns>
         async public Task<List<CatalogForCreationDto>> Run(string searchQuery)
         {
             string pathToDriver = @"D:\Distrib\seleniumDriver";
