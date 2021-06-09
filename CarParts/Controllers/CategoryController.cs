@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CarParts.Controllers
 {
-
+    [Authorize]
     [Route("api/category")]
     [ApiController]
     public class CategoryController : ControllerBase

@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PriceComparer.Controllers
 {
-
+    [Authorize]
     [Route("api/products")]
     [ApiController]
     public class ProductController : ControllerBase

@@ -1,0 +1,1 @@
+2021-06-09 10:59:49.8300 INFO Returned all products from database.
