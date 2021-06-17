@@ -19,11 +19,14 @@ namespace CarParts
             CreateMap<Catalog, CatalogDto>();
             CreateMap<Category, CategoryDto>();
             CreateMap<Product, ProductDto>();
+            CreateMap<FavouriteItem, FavouriteItemDto>();
 
             CreateMap<StoreForCreationDto, Store>();
             CreateMap<CatalogForCreationDto, Catalog>();
             CreateMap<CategoryForCreationDto, Category>();
             CreateMap<UserForRegistrationDto, User>();
+            CreateMap<FavouriteItemForCreationDto, FavouriteItem>();
+
             CreateMap<UserDto, User>()
                 .ForMember(vm => vm.UserName, mpvm => mpvm.MapFrom(u => u.UserName))
                 .ForMember(vm => vm.FirstName, mpvm => mpvm.MapFrom(u => u.FirstName))

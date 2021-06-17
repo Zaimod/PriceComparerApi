@@ -44,6 +44,10 @@ namespace Contracts
         /// Saves the asynchronous.
         /// </summary>
         /// <returns></returns>
+        /// 
+
+        IFavouriteItemRepository favouriteItem { get; }
+
         Task SaveAsync();
     }
 }

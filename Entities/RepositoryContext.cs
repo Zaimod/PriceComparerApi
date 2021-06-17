@@ -23,7 +23,7 @@ namespace Entities
         public DbSet<Category> Categories { get; set; }
         public DbSet<Catalog> Catalogs { get; set; }
         public DbSet<Product> Products { get; set; }
-
+        public DbSet<FavouriteItem> FavouriteItems { get; set; }
         /// <summary>
         /// Override this method to further configure the model that was discovered by convention from the entity types
         /// exposed in <see cref="T:Microsoft.EntityFrameworkCore.DbSet`1" /> properties on your derived context. The resulting model may be cached

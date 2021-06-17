@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace PriceComparer.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20210609151624_new database")]
-    partial class newdatabase
+    [Migration("20210617065306_database1")]
+    partial class database1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -84,6 +84,25 @@ namespace PriceComparer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Category");
+                });
+
+            modelBuilder.Entity("Entities.Models.FavouriteItem", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("catalogId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("userNameId")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("catalogId");
+
+                    b.ToTable("FavouriteItem");
                 });
 
             modelBuilder.Entity("Entities.Models.Product", b =>
@@ -241,22 +260,22 @@ namespace PriceComparer.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "21f36e06-a92d-4289-8df6-eb95e959c12f",
-                            ConcurrencyStamp = "22744bc7-2fef-4d55-8985-f7b37a643ba7",
+                            Id = "e2a19969-49d2-44e4-8871-821106eac35f",
+                            ConcurrencyStamp = "f71a15e6-ecfc-4f83-a730-dc32555ee0a3",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
-                            Id = "9839d99c-2fed-4c66-abad-73b095bd38e3",
-                            ConcurrencyStamp = "7581a56b-bfbf-4b6b-b627-6d2f7f788f6d",
+                            Id = "8f313cf2-cd0a-4800-a2cc-2c5f39481f4e",
+                            ConcurrencyStamp = "ae58b200-8ad6-40c2-adb2-e87606ffa0fc",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "0a7215ba-6b9d-4907-8df7-e4c120a08e2f",
-                            ConcurrencyStamp = "847155ab-bb2b-4a4d-afdf-0d4dc2773ecd",
+                            Id = "98dbde22-7cb2-459d-8dc5-e0ffa2613b10",
+                            ConcurrencyStamp = "2e14a5ec-d10f-47d5-be85-b5877c00b161",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -373,7 +392,7 @@ namespace PriceComparer.Migrations
                         .IsRequired();
 
                     b.HasOne("Entities.Models.Product", "products")
-                        .WithMany("catalog")
+                        .WithMany()
                         .HasForeignKey("productId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -389,6 +408,17 @@ namespace PriceComparer.Migrations
                     b.Navigation("products");
 
                     b.Navigation("stores");
+                });
+
+            modelBuilder.Entity("Entities.Models.FavouriteItem", b =>
+                {
+                    b.HasOne("Entities.Models.Catalog", "catalog")
+                        .WithMany("FavouriteItems")
+                        .HasForeignKey("catalogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("catalog");
                 });
 
             modelBuilder.Entity("Entities.Models.Product", b =>
@@ -453,16 +483,16 @@ namespace PriceComparer.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Entities.Models.Catalog", b =>
+                {
+                    b.Navigation("FavouriteItems");
+                });
+
             modelBuilder.Entity("Entities.Models.Category", b =>
                 {
                     b.Navigation("catalog");
 
                     b.Navigation("products");
-                });
-
-            modelBuilder.Entity("Entities.Models.Product", b =>
-                {
-                    b.Navigation("catalog");
                 });
 
             modelBuilder.Entity("Entities.Models.Store", b =>

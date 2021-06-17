@@ -25,5 +25,6 @@ namespace Entities.Models
         public int categoryId { get; set; }
         public int productId { get; set; }
         public Product products { get; set; }
+        public List<FavouriteItem> FavouriteItems { get; set; } = new List<FavouriteItem>();
     }
 }

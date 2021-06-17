@@ -52,7 +52,10 @@ namespace CarParts.Controllers.Parser
             _logger.LogInfo($"Testing Parser Controller");
             try
             {
-                _parser = new ParserComfy(storeId, categoryId, productId, _repository);
+                if (storeId == 1)
+                    _parser = new ParserRozetka(storeId, categoryId, productId, _repository);
+                else if (storeId == 2)
+                    _parser = new ParserComfy(storeId, categoryId, productId, _repository);
 
                 dto = await _parser.Run(search);
 
@@ -73,7 +76,7 @@ namespace CarParts.Controllers.Parser
         /// <param name="productId">The product identifier.</param>
         /// <returns></returns>
         [HttpGet("insert")]
-        public async Task<IActionResult> Insert(string search = "iphone", int storeId = 1, int categoryId = 1, int productId = 1)
+        public async Task<IActionResult> Insert(string search = "iphone", int storeId = 2, int categoryId = 1, int productId = 1)
         {
             _logger.LogInfo($"Insert ParserController: search={search}, storeId={storeId}, categoryId={categoryId}, productId={productId}.");
            
@@ -123,7 +126,10 @@ namespace CarParts.Controllers.Parser
 
             try
             {
-                _parser = new ParserRozetka(storeId, categoryId, productId, _repository);
+                if (storeId == 1)
+                    _parser = new ParserRozetka(storeId, categoryId, productId, _repository);
+                else if (storeId == 2)
+                    _parser = new ParserComfy(storeId, categoryId, productId, _repository);
 
                 dto = await _parser.Run(search);
                 var itemsEntities = _mapper.Map<IEnumerable<Catalog>>(dto);

@@ -15,6 +15,7 @@ namespace Repository
         private ICatalogRepository _catalog;
         private ICategoryRepository _category;
         private IProductRepository _product;
+        private IFavouriteItemRepository _favouriteItem;
 
         public IStoreRepository store
         {
@@ -63,6 +64,19 @@ namespace Repository
                 }
 
                 return _category;
+            }
+        }
+
+        public IFavouriteItemRepository favouriteItem
+        {
+            get
+            {
+                if(_favouriteItem == null)
+                {
+                    _favouriteItem = new FavouriteItemRepository(_repoContext);
+                }
+
+                return _favouriteItem;
             }
         }
 
