@@ -21,5 +21,11 @@ namespace Contracts
         /// <param name="favouriteItem">The favourite item.</param>
         /// <returns></returns>
         void AddFavouriteItem(FavouriteItem favouriteItem);
+
+        /// <summary>
+        /// Deletes the item.
+        /// </summary>
+        /// <param name="favouriteItem">The favourite item.</param>
+        void DeleteItem(FavouriteItem favouriteItem);
     }
 }

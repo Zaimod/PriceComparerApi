@@ -62,8 +62,45 @@ namespace PriceComparer.Controllers
             _logger.LogInfo($"Returned all favourite items by username from database.");
 
             var resultFavouriteItems = _mapper.Map<IEnumerable<FavouriteItemDto>>(favouriteItems);
- 
-            return Ok(resultFavouriteItems);
+
+            List<CatalogDto> result = new List<CatalogDto>();
+
+            foreach (var item in resultFavouriteItems)
+            {
+                result.Add(item.catalog);
+            }
+
+            return Ok(result);
+        }
+
+        [HttpPost("delete")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> DeleteItem([FromBody] FavouriteItemForCreationDto favouriteItem)
+        {
+            if (favouriteItem == null)
+            {
+                _logger.LogError("FavouriteItemForCreationDto object sent from client is null.");
+
+                return BadRequest("FavouriteItemForCreationDto object is null");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                _logger.LogError("Invalid favourite Item object sent from client.");
+
+                return BadRequest("Invalid model object");
+            }
+
+            int id = _repository.favouriteItem.FindAll().Where(f => f.catalogId == favouriteItem.catalogId && f.userNameId == favouriteItem.userNameId).FirstOrDefault().id;
+
+            var favouriteItemMapped = _mapper.Map<FavouriteItem>(favouriteItem);
+            favouriteItemMapped.id = id;
+
+            _repository.favouriteItem.DeleteItem(favouriteItemMapped);
+
+            await _repository.SaveAsync();
+
+            return Ok();
         }
     }
 }

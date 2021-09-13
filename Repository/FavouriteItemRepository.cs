@@ -36,5 +36,14 @@ namespace Repository
         {
             return await FindByCondition(u => u.userNameId == userName).Include(f => f.catalog).ToListAsync();
         }
+
+        /// <summary>
+        /// Deletes the item.
+        /// </summary>
+        /// <param name="favouriteItem">The favourite item.</param>
+        public void DeleteItem(FavouriteItem favouriteItem)
+        {
+            Delete(favouriteItem);
+        }
     }
 }
