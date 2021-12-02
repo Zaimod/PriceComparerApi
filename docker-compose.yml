@@ -1,0 +1,30 @@
+version: '3.4'
+
+volumes:
+  datafiles:
+
+services:
+  db:
+     image: mysql:8.0.22
+     environment:
+       MYSQL_RANDOM_ROOT_PASSWORD: 1
+       MYSQL_DATABASE: pricecomparison
+       MYSQL_USER: admin
+       MYSQL_ROOT_PASSWORD: admin123
+       MYSQL_ROOT_HOST: '%'
+     restart: always
+     ports:
+       - "3307:3306"
+     volumes:
+       - datafiles:/var/lib/mysql
+       - "~/sql-scripts/setup.sql:/docker-entrypoint-initdb.d/1.sql"
+
+  pricecomparer:
+    depends_on:
+       - db
+    image: pricecomparer:runtime
+    build:
+      context: .
+      dockerfile: CarParts\Dockerfile
+    ports:
+       - "8080:5000"

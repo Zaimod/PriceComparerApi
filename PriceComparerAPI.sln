@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31911.260
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriceComparer", "CarParts\PriceComparer.csproj", "{0C88372C-503E-478E-9667-B94153410232}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -22,6 +22,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParserApplication", "ClassLibrary1\ParserApplication.csproj", "{F6F6BC04-6C09-46D7-B460-B8443D51B4AE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriceComparerAPI.Tests", "PriceComparerAPI.Tests\PriceComparerAPI.Tests.csproj", "{019F6CF1-FAC5-4711-B992-B92F4032EA6E}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B254147C-51B8-4939-B3BB-C5ED7BB62220}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{019F6CF1-FAC5-4711-B992-B92F4032EA6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{019F6CF1-FAC5-4711-B992-B92F4032EA6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{019F6CF1-FAC5-4711-B992-B92F4032EA6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B254147C-51B8-4939-B3BB-C5ED7BB62220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B254147C-51B8-4939-B3BB-C5ED7BB62220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B254147C-51B8-4939-B3BB-C5ED7BB62220}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B254147C-51B8-4939-B3BB-C5ED7BB62220}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

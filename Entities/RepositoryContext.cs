@@ -17,6 +17,7 @@ namespace Entities
         public RepositoryContext(DbContextOptions options)
             : base(options)
         { 
+            Database.EnsureCreated();
         }
 
         public DbSet<Store> Stores { get; set; }

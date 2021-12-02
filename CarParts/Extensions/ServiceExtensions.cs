@@ -23,7 +23,7 @@ namespace CarParts.Extensions
         /// <summary>
         /// Configures the cors.
         /// </summary>
-        /// <param name="services">The services.</param>
+        /// <param name="services">The services.</param> 
         public static void ConfigureCORS(this IServiceCollection services) => 
             services.AddCors(options =>
             {
@@ -61,7 +61,8 @@ namespace CarParts.Extensions
         /// <param name="config">The configuration.</param>
         public static void ConfigureMySqlContext(this IServiceCollection services, IConfiguration config)
         {
-            var connectionString = config["mysqlconnection:connectionString"];
+
+            var connectionString = "server=db;port=3306;userid=root;password=ieNgahzee7waeY3ahthooyiagh3AiGh5;database=pricecomparison;";
             services.AddDbContext<RepositoryContext>(o => o.UseMySql(connectionString, 
                 MySqlServerVersion.LatestSupportedServerVersion, 
                 b => b.MigrationsAssembly("PriceComparer")));
@@ -105,8 +106,9 @@ namespace CarParts.Extensions
         public static void ConfigureJWTToken(this IServiceCollection services, IConfiguration configuration)
         {
             var jwtSettings = configuration.GetSection("JwtSettings");
-            var secretKey = Environment.GetEnvironmentVariable("SECRET");
+            var secretKey = "CarPartsSecretKey";
 
+            
             services.AddAuthentication(opt =>
             {
                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
