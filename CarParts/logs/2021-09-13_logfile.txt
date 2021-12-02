@@ -1,0 +1,183 @@
+2021-09-13 18:09:08.0252 ERROR Something went wrong: System.TypeInitializationException: The type initializer for 'Microsoft.EntityFrameworkCore.Query.QueryableMethods' threw an exception.
+ ---> System.InvalidOperationException: Sequence contains more than one matching element
+   at System.Linq.ThrowHelper.ThrowMoreThanOneMatchException() in System.Linq.dll:token 0x600041c+0xa
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Func`2 predicate, Boolean& found) in System.Linq.dll:token 0x60000f7+0x3d
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source, Func`2 predicate) in System.Linq.dll:token 0x60000f1+0x0
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethods..cctor() in Microsoft.EntityFrameworkCore.dll:token 0x6000716+0x229
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethods.get_Select() in Microsoft.EntityFrameworkCore.dll:token 0x60006f7+0x0
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryableMethodNormalizingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression) in Microsoft.EntityFrameworkCore.dll:token 0x6000898+0x260
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor) in System.Linq.Expressions.dll:token 0x60006ef+0x0
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node) in System.Linq.Expressions.dll:token 0x60005e2+0x5
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.NormalizeQueryableMethod(Expression expression) in Microsoft.EntityFrameworkCore.dll:token 0x60007af+0xb
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryTranslationPreprocessor.NormalizeQueryableMethod(Expression expression) in Microsoft.EntityFrameworkCore.Relational.dll:token 0x6000733+0x13
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query) in Microsoft.EntityFrameworkCore.dll:token 0x60007ae+0x19
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryTranslationPreprocessor.Process(Expression query) in Microsoft.EntityFrameworkCore.Relational.dll:token 0x6000734+0x0
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query) in Microsoft.EntityFrameworkCore.dll:token 0x6000764+0x1e
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async) in Microsoft.EntityFrameworkCore.dll:token 0x60004d2+0x0
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async) in Microsoft.EntityFrameworkCore.dll:token 0x60008a4+0x0
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0() in Microsoft.EntityFrameworkCore.dll:token 0x6002392+0x0
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler) in Microsoft.EntityFrameworkCore.dll:token 0x6000821+0x79
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken) in Microsoft.EntityFrameworkCore.dll:token 0x60008a6+0x77
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken) in Microsoft.EntityFrameworkCore.dll:token 0x600083b+0x0
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken) in Microsoft.EntityFrameworkCore.dll:token 0x6000831+0x0
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator() in System.Private.CoreLib.dll:token 0x6004f78+0x0
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken) in Microsoft.EntityFrameworkCore.dll:token 0x6000276+0x0
+   at Repository.CatalogRepository.GetCatalog() in D:\WorkSpace\CarPartsAPI\Repository\CatalogRepository.cs:line 29
+   at CarParts.Controllers.CatalogController.GetAllCatalog() in D:\WorkSpace\CarPartsAPI\CarParts\Controllers\CatalogController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000fc0+0x71
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009c0+0x67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009bd+0x6a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009ba+0x15
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009b5+0x39a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync() in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009b9+0xa
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a85+0x6a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7a+0x15
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a71+0x835
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync() in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a6e+0xa
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7d+0x77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7d+0xfb
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger) in Microsoft.AspNetCore.Routing.dll:token 0x60000ab+0x5e
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context) in Microsoft.AspNetCore.Authorization.Policy.dll:token 0x6000013+0x16b
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context) in Microsoft.AspNetCore.Authentication.dll:token 0x6000049+0x3be
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task) in Microsoft.AspNetCore.Diagnostics.dll:token 0x60000c3+0x70
+2021-09-13 18:27:44.5229 ERROR Something went wrong: System.TypeInitializationException: The type initializer for 'Microsoft.EntityFrameworkCore.Query.QueryableMethods' threw an exception.
+ ---> System.InvalidOperationException: Sequence contains more than one matching element
+   at System.Linq.ThrowHelper.ThrowMoreThanOneMatchException() in System.Linq.dll:token 0x600041c+0xa
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Func`2 predicate, Boolean& found) in System.Linq.dll:token 0x60000f7+0x3d
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source, Func`2 predicate) in System.Linq.dll:token 0x60000f1+0x0
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethods..cctor() in Microsoft.EntityFrameworkCore.dll:token 0x6000716+0x229
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethods.get_Select() in Microsoft.EntityFrameworkCore.dll:token 0x60006f7+0x0
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryableMethodNormalizingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression) in Microsoft.EntityFrameworkCore.dll:token 0x6000898+0x260
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor) in System.Linq.Expressions.dll:token 0x60006ef+0x0
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node) in System.Linq.Expressions.dll:token 0x60005e2+0x5
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.NormalizeQueryableMethod(Expression expression) in Microsoft.EntityFrameworkCore.dll:token 0x60007af+0xb
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryTranslationPreprocessor.NormalizeQueryableMethod(Expression expression) in Microsoft.EntityFrameworkCore.Relational.dll:token 0x6000733+0x13
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query) in Microsoft.EntityFrameworkCore.dll:token 0x60007ae+0x19
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryTranslationPreprocessor.Process(Expression query) in Microsoft.EntityFrameworkCore.Relational.dll:token 0x6000734+0x0
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query) in Microsoft.EntityFrameworkCore.dll:token 0x6000764+0x1e
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async) in Microsoft.EntityFrameworkCore.dll:token 0x60004d2+0x0
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async) in Microsoft.EntityFrameworkCore.dll:token 0x60008a4+0x0
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0() in Microsoft.EntityFrameworkCore.dll:token 0x6002392+0x0
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler) in Microsoft.EntityFrameworkCore.dll:token 0x6000821+0x79
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken) in Microsoft.EntityFrameworkCore.dll:token 0x60008a6+0x77
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken) in Microsoft.EntityFrameworkCore.dll:token 0x600083b+0x0
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken) in Microsoft.EntityFrameworkCore.dll:token 0x6000831+0x0
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator() in System.Private.CoreLib.dll:token 0x6004f78+0x0
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken) in Microsoft.EntityFrameworkCore.dll:token 0x6000276+0x0
+   at Repository.CatalogRepository.GetCatalog() in D:\WorkSpace\CarPartsAPI\Repository\CatalogRepository.cs:line 29
+   at CarParts.Controllers.CatalogController.GetAllCatalog() in D:\WorkSpace\CarPartsAPI\CarParts\Controllers\CatalogController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000fc0+0x71
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009c0+0x67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009bd+0x6a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009ba+0x15
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009b5+0x39a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync() in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009b9+0xa
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a85+0x6a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7a+0x15
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a71+0x835
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync() in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a6e+0xa
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7d+0x77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7d+0xfb
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger) in Microsoft.AspNetCore.Routing.dll:token 0x60000ab+0x5e
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context) in Microsoft.AspNetCore.Authorization.Policy.dll:token 0x6000013+0x16b
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context) in Microsoft.AspNetCore.Authentication.dll:token 0x6000049+0x3be
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task) in Microsoft.AspNetCore.Diagnostics.dll:token 0x60000c3+0x70
+2021-09-13 18:38:40.5494 ERROR Something went wrong: System.TypeInitializationException: The type initializer for 'Microsoft.EntityFrameworkCore.Query.QueryableMethods' threw an exception.
+ ---> System.InvalidOperationException: Sequence contains more than one matching element
+   at System.Linq.ThrowHelper.ThrowMoreThanOneMatchException() in System.Linq.dll:token 0x600041c+0xa
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Func`2 predicate, Boolean& found) in System.Linq.dll:token 0x60000f7+0x3d
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source, Func`2 predicate) in System.Linq.dll:token 0x60000f1+0x0
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethods..cctor() in Microsoft.EntityFrameworkCore.dll:token 0x6000716+0x229
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethods.get_FirstOrDefaultWithPredicate() in Microsoft.EntityFrameworkCore.dll:token 0x60006eb+0x0
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken) in Microsoft.EntityFrameworkCore.dll:token 0x6000240+0x18
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.FindByNameAsync(String normalizedUserName, CancellationToken cancellationToken) in Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll:token 0x600009e+0x1a
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName) in Microsoft.Extensions.Identity.Core.dll:token 0x60001dc+0x31
+   at Repository.AuthenticateManager.ValidateUser(UserForAuthenticationDto userForAuth) in D:\WorkSpace\CarPartsAPI\Repository\AuthenticateManager.cs:line 42
+   at CarParts.Controllers.AuthenticationController.Authenticate(UserForAuthenticationDto user) in D:\WorkSpace\CarPartsAPI\CarParts\Controllers\AuthenticationController.cs:line 86
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000fc0+0x71
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009c0+0x67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009bd+0x6a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009ba+0x15
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009b5+0x39a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync() in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009b9+0xa
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a85+0x6a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7a+0x15
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a71+0x835
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync() in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a6e+0xa
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7d+0x77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7d+0xfb
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger) in Microsoft.AspNetCore.Routing.dll:token 0x60000ab+0x5e
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context) in Microsoft.AspNetCore.Authorization.Policy.dll:token 0x6000013+0x16b
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context) in Microsoft.AspNetCore.Authentication.dll:token 0x6000049+0x3be
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task) in Microsoft.AspNetCore.Diagnostics.dll:token 0x60000c3+0x70
+2021-09-13 18:40:36.3165 ERROR Something went wrong: System.TypeInitializationException: The type initializer for 'Microsoft.EntityFrameworkCore.Query.QueryableMethods' threw an exception.
+ ---> System.InvalidOperationException: Sequence contains more than one matching element
+   at System.Linq.ThrowHelper.ThrowMoreThanOneMatchException() in System.Linq.dll:token 0x600041c+0xa
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Func`2 predicate, Boolean& found) in System.Linq.dll:token 0x60000f7+0x3d
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source, Func`2 predicate) in System.Linq.dll:token 0x60000f1+0x0
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethods..cctor() in Microsoft.EntityFrameworkCore.dll:token 0x6000716+0x229
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethods.get_FirstOrDefaultWithPredicate() in Microsoft.EntityFrameworkCore.dll:token 0x60006eb+0x0
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken) in Microsoft.EntityFrameworkCore.dll:token 0x6000240+0x18
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.FindByNameAsync(String normalizedUserName, CancellationToken cancellationToken) in Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll:token 0x600009e+0x1a
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName) in Microsoft.Extensions.Identity.Core.dll:token 0x60001dc+0x31
+   at Repository.AuthenticateManager.ValidateUser(UserForAuthenticationDto userForAuth) in D:\WorkSpace\CarPartsAPI\Repository\AuthenticateManager.cs:line 42
+   at CarParts.Controllers.AuthenticationController.Authenticate(UserForAuthenticationDto user) in D:\WorkSpace\CarPartsAPI\CarParts\Controllers\AuthenticationController.cs:line 86
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000fc0+0x71
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009c0+0x67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009bd+0x6a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009ba+0x15
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009b5+0x39a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync() in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009b9+0xa
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a85+0x6a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7a+0x15
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a71+0x835
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync() in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a6e+0xa
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7d+0x77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7d+0xfb
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger) in Microsoft.AspNetCore.Routing.dll:token 0x60000ab+0x5e
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context) in Microsoft.AspNetCore.Authorization.Policy.dll:token 0x6000013+0x16b
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context) in Microsoft.AspNetCore.Authentication.dll:token 0x6000049+0x3be
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task) in Microsoft.AspNetCore.Diagnostics.dll:token 0x60000c3+0x70
+2021-09-13 18:40:38.0171 ERROR Something went wrong: System.TypeInitializationException: The type initializer for 'Microsoft.EntityFrameworkCore.Query.QueryableMethods' threw an exception.
+ ---> System.InvalidOperationException: Sequence contains more than one matching element
+   at System.Linq.ThrowHelper.ThrowMoreThanOneMatchException() in System.Linq.dll:token 0x600041c+0xa
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Func`2 predicate, Boolean& found) in System.Linq.dll:token 0x60000f7+0x3d
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source, Func`2 predicate) in System.Linq.dll:token 0x60000f1+0x0
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethods..cctor() in Microsoft.EntityFrameworkCore.dll:token 0x6000716+0x229
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethods.get_FirstOrDefaultWithPredicate() in Microsoft.EntityFrameworkCore.dll:token 0x60006eb+0x0
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken) in Microsoft.EntityFrameworkCore.dll:token 0x6000240+0x18
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.FindByNameAsync(String normalizedUserName, CancellationToken cancellationToken) in Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll:token 0x600009e+0x1a
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName) in Microsoft.Extensions.Identity.Core.dll:token 0x60001dc+0x31
+   at Repository.AuthenticateManager.ValidateUser(UserForAuthenticationDto userForAuth) in D:\WorkSpace\CarPartsAPI\Repository\AuthenticateManager.cs:line 42
+   at CarParts.Controllers.AuthenticationController.Authenticate(UserForAuthenticationDto user) in D:\WorkSpace\CarPartsAPI\CarParts\Controllers\AuthenticationController.cs:line 86
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000fc0+0x71
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009c0+0x67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009bd+0x6a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009ba+0x15
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009b5+0x39a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync() in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009b9+0xa
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a85+0x6a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7a+0x15
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a71+0x835
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync() in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a6e+0xa
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7d+0x77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a7d+0xfb
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger) in Microsoft.AspNetCore.Routing.dll:token 0x60000ab+0x5e
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context) in Microsoft.AspNetCore.Authorization.Policy.dll:token 0x6000013+0x16b
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context) in Microsoft.AspNetCore.Authentication.dll:token 0x6000049+0x3be
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task) in Microsoft.AspNetCore.Diagnostics.dll:token 0x60000c3+0x70
